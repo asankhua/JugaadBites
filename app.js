@@ -248,6 +248,10 @@
       statusEl.textContent = "Choose egg, meat, or fish. One is required before recipes appear.";
       return;
     }
+    if (![...selected].some((id) => !isProtein(id))) {
+      statusEl.textContent = "Tick an ingredient. Recipes appear once one is selected.";
+      return;
+    }
     const dietName = diet === "veg" ? "Veg" : "Non-veg";
     const mealName = MEAL_LABEL[meal];
     const words = [dietName, mealName, ...[...selected].map(labelFor)];
@@ -419,7 +423,9 @@
     const ready = Boolean(diet && meal);
     const proteinReady = diet !== "non-veg" || Boolean(chosenProtein(selected));
     if (ready) pruneTicks(selected, diet, meal);
-    const matches = ready && proteinReady ? visibleDishes(selected, diet, meal) : [];
+    const pool = ready && proteinReady ? visibleDishes(selected, diet, meal) : [];
+    const ingredientPicked = [...selected].some((id) => !isProtein(id));
+    const matches = ingredientPicked ? pool : [];
     const nextKey = `${diet}|${meal}`;
     const menuChanged = nextKey !== menuKey;
     menuKey = nextKey;
@@ -438,14 +444,13 @@
     const note = document.getElementById("meal-note");
     if (note) note.textContent = meal ? MEAL_NOTE[meal] || "" : "";
     chipsEl.classList.remove("is-arriving");
-    if (ready) renderChips(selected, diet, meal, matches);
+    if (ready) renderChips(selected, diet, meal, pool);
     else chipsEl.replaceChildren();
     if (ready && menuChanged) {
       void chipsEl.offsetWidth;
       chipsEl.classList.add("is-arriving");
     }
-    const narrowed = [...selected].some((id) => !isProtein(id));
-    statusEl.classList.toggle("is-hit", narrowed && matches.length > 0 && matches.length <= 6);
+    statusEl.classList.toggle("is-hit", ingredientPicked && matches.length > 0 && matches.length <= 6);
     renderStatus(selected, diet, meal, matches);
     renderDishes(matches, selected, meal);
   }
