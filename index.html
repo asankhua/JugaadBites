@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JugaadBites — cook what you have tonight</title>
+  <meta name="description" content="Tick what is already in your kitchen. 390 of the most cooked home recipes narrow to the ones you can make tonight. No sign-up, no shopping list, nothing leaves your browser." />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="preload" as="image" href="images/hero-table.jpg" />
+  <script src="recipes.js?v=7" defer></script>
+  <script src="app.js?v=20" defer></script>
+  <script src="site.js?v=4" defer></script>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="JugaadBites, back to top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        JugaadBites
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#menus">Menus</a>
+        <a href="#how">How it works</a>
+        <a href="#why">Why it helps</a>
+        <a class="nav-cta" href="#cook">Start cooking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Your kitchen, already stocked</p>
+        <h1 id="hero-title" class="reveal">Cook what you have.<br /><em>Not what you lack.</em></h1>
+        <p class="hero-lede reveal">Stop staring into the fridge. Tick what is already on your shelf, and 390 of the most cooked home recipes narrow to the dishes you can make tonight, with clear steps for every one.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#cook">Find my recipe</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <dl class="stats reveal">
+          <div><dt>Recipes</dt><dd data-count="390">390</dd></div>
+          <div><dt>Ingredients</dt><dd data-count="51">51</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <figure class="hero-photo" data-parallax>
+          <img src="images/hero-table.jpg" alt="" width="1400" height="933" fetchpriority="high" />
+        </figure>
+        <div class="hero-card">
+          <span class="hero-card-label">Tonight from your shelf</span>
+          <span class="hero-card-dish">Paneer butter masala</span>
+          <span class="hero-card-meta"><span class="dot"></span>Paneer · Butter · Tomato · 30 min</span>
+        </div>
+        <span class="float f1">Lemon</span>
+        <span class="float f2">Paneer</span>
+        <span class="float f3">Onion</span>
+        <span class="float f4">Rice</span>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Lemon vermicelli</span><span>Paneer onion masala</span><span>Jeera rice</span><span>Aloo paratha</span><span>Egg bhurji</span><span>Chicken curry</span><span>Masala poha</span><span>Dal fry</span><span>Garlic prawns</span><span>Banana shake</span>
+        <span>Lemon vermicelli</span><span>Paneer onion masala</span><span>Jeera rice</span><span>Aloo paratha</span><span>Egg bhurji</span><span>Chicken curry</span><span>Masala poha</span><span>Dal fry</span><span>Garlic prawns</span><span>Banana shake</span>
+      </div>
+    </section>
+
+    <section class="section" id="menus" aria-labelledby="menus-title">
+      <p class="eyebrow reveal">Four menus</p>
+      <h2 id="menus-title" class="section-title reveal">A different table for every time of day.</h2>
+      <p class="lede reveal">Breakfast is not dinner reheated. Each meal opens its own menu, and only the dishes people really eat at two meals appear in both.</p>
+      <div class="menu-grid">
+        <a class="menu-card reveal" href="#cook" data-pick-meal="breakfast">
+          <span class="menu-photo"><img src="images/meal-breakfast.jpg" alt="Lemon poha, masala dosa with chutney and sambar, and a glass of chai" width="960" height="640" loading="lazy" /></span>
+          <span class="menu-body">
+            <span class="menu-time">7 to 10 am</span>
+            <span class="menu-name">Breakfast</span>
+            <span class="menu-dishes">Poha, dosa, idli, upma, parathas</span>
+          </span>
+        </a>
+        <a class="menu-card reveal" href="#cook" data-pick-meal="lunch">
+          <span class="menu-photo"><img src="images/meal-lunch.jpg" alt="Dal tadka, jeera rice, aloo gobi, rotis and raita on a steel plate" width="960" height="640" loading="lazy" /></span>
+          <span class="menu-body">
+            <span class="menu-time">12 to 3 pm</span>
+            <span class="menu-name">Lunch</span>
+            <span class="menu-dishes">Dal, rice, pulao, sabzi, rajma</span>
+          </span>
+        </a>
+        <a class="menu-card reveal" href="#cook" data-pick-meal="snack">
+          <span class="menu-photo"><img src="images/meal-snacks.jpg" alt="Onion pakoras and samosas with chutneys and a cup of chai" width="960" height="640" loading="lazy" /></span>
+          <span class="menu-body">
+            <span class="menu-time">4 to 7 pm</span>
+            <span class="menu-name">Snacks</span>
+            <span class="menu-dishes">Pakora, samosa, chaat, tikki, rolls</span>
+          </span>
+        </a>
+        <a class="menu-card reveal" href="#cook" data-pick-meal="dinner">
+          <span class="menu-photo"><img src="images/meal-dinner.jpg" alt="Chicken biryani, butter chicken and garlic naan by lamplight" width="960" height="640" loading="lazy" /></span>
+          <span class="menu-body">
+            <span class="menu-time">7 to 10 pm</span>
+            <span class="menu-name">Dinner</span>
+            <span class="menu-dishes">Biryani, curries, paneer, noodles</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <p class="eyebrow reveal">How it works</p>
+      <h2 id="how-title" class="section-title reveal">Three taps from “what now?” to “dinner’s on.”</h2>
+      <ol class="steps-grid">
+        <li class="step-card reveal">
+          <span class="step-num">01</span>
+          <h3>Pick your plate</h3>
+          <p>Choose veg or non-veg, then a meal. Breakfast, lunch, snacks, and dinner each have their own menu.</p>
+        </li>
+        <li class="step-card reveal">
+          <span class="step-num">02</span>
+          <h3>Tick what is here</h3>
+          <p>Tap one ingredient. The ones that pair with it start to glow, so the next tick is obvious.</p>
+        </li>
+        <li class="step-card reveal">
+          <span class="step-num">03</span>
+          <h3>Cook with confidence</h3>
+          <p>Every recipe shows its ingredients and plain, step-by-step instructions. No guessing, no ads.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section why" id="why" aria-labelledby="why-title">
+      <p class="eyebrow reveal">Why it helps</p>
+      <h2 id="why-title" class="section-title reveal">Less waste. Fewer takeaway nights. More meals you’re proud of.</h2>
+      <div class="why-grid">
+        <article class="why-card reveal">
+          <h3>No shopping list</h3>
+          <p>Start from what is already in the kitchen, not from a recipe that needs six things you don’t have.</p>
+        </article>
+        <article class="why-card reveal">
+          <h3>Private by design</h3>
+          <p>No account, no tracking. A refresh clears your choices, and nothing is sent anywhere.</p>
+        </article>
+        <article class="why-card reveal">
+          <h3>Fast and offline</h3>
+          <p>Every recipe loads with the page. It works on a slow connection, or with none at all.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cook" id="cook" aria-labelledby="board-title">
+      <div class="cook-inner">
+        <div class="cook-head reveal">
+          <p class="eyebrow">Start cooking</p>
+          <h2 class="section-title">What can I cook with what is already here?</h2>
+          <p class="lede">Choose veg or non-veg and a meal. Each meal opens a different menu. For non-veg, pick egg, meat, or fish first. Then tick an ingredient, and the ones that still match glow.</p>
+          <p class="staples" id="staples"></p>
+        </div>
+
+        <div class="cook-layout">
+          <div class="board reveal">
+            <div class="board-head">
+              <h2 id="board-title">In the kitchen</h2>
+              <button type="button" class="clear" id="clear">Clear</button>
+            </div>
+            <p class="group-label" id="diet-label">Diet</p>
+            <div class="diet" role="radiogroup" aria-labelledby="diet-label">
+              <button type="button" class="diet-btn" data-diet="veg" aria-pressed="false">Veg</button>
+              <button type="button" class="diet-btn" data-diet="non-veg" aria-pressed="false">Non-veg</button>
+            </div>
+            <p class="group-label" id="meal-label">Meal</p>
+            <div class="diet meal-row" role="radiogroup" aria-labelledby="meal-label">
+              <button type="button" class="diet-btn" data-meal="breakfast" aria-pressed="false">Breakfast</button>
+              <button type="button" class="diet-btn" data-meal="lunch" aria-pressed="false">Lunch</button>
+              <button type="button" class="diet-btn" data-meal="snack" aria-pressed="false">Snacks</button>
+              <button type="button" class="diet-btn" data-meal="dinner" aria-pressed="false">Dinner</button>
+            </div>
+            <p class="meal-note" id="meal-note"></p>
+            <div id="chips"></div>
+          </div>
+
+          <div class="cook-stage">
+            <div class="meal-banner" id="meal-banner" aria-hidden="true">
+              <span class="meal-banner-kicker">Today’s menu</span>
+              <span class="meal-banner-title" id="meal-banner-title"></span>
+            </div>
+            <p class="status" id="status" role="status"></p>
+            <section class="results" id="results" aria-label="Dishes you can cook"></section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Ashish Kumar Sankhua. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This page needs JavaScript to filter dishes.</p>
+  </noscript>
+</body>
+</html>
