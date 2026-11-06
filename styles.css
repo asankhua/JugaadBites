@@ -1180,6 +1180,16 @@ a:focus-visible {
   text-align: center;
 }
 
+.footer-copy a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-copy a:hover {
+  color: var(--cream);
+}
+
 .noscript {
   width: var(--wrap);
   margin: 0 auto 48px;
