@@ -22,6 +22,9 @@
   const dishes = data.dishes;
 
   const chipsEl = document.getElementById("chips");
+  const searchEl = document.getElementById("recipe-search");
+  const suggestEl = document.getElementById("recipe-suggest");
+  const SUGGEST_LIMIT = 6;
   const statusEl = document.getElementById("status");
   const resultsEl = document.getElementById("results");
   const staplesEl = document.getElementById("staples");
@@ -99,6 +102,38 @@
 
   function mealAllows(dish, meal) {
     return dish.meals.includes(meal);
+  }
+
+  const QUERY_SKIP = new Set(["Veg", "Non-veg", "Breakfast", "Lunch", "Snacks", "Dinner"]);
+
+  function searchQuery() {
+    return searchEl ? searchEl.value.trim() : "";
+  }
+
+  function matchesQuery(dish, query) {
+    if (!query) return true;
+    const q = query.toLowerCase();
+    if (dish.name.toLowerCase().includes(q)) return true;
+    return dish.keywords.some((word) => !QUERY_SKIP.has(word) && word.toLowerCase().includes(q));
+  }
+
+  function suggestionsFor(query) {
+    const q = query.toLowerCase();
+    if (!q) return [];
+    const starts = [];
+    const named = [];
+    const rest = [];
+    for (const dish of dishes) {
+      const name = dish.name.toLowerCase();
+      if (name.startsWith(q)) starts.push(dish);
+      else if (name.includes(q)) named.push(dish);
+      else if (matchesQuery(dish, query)) rest.push(dish);
+    }
+    const byName = (a, b) => a.name.localeCompare(b.name);
+    starts.sort(byName);
+    named.sort(byName);
+    rest.sort(byName);
+    return [...starts, ...named, ...rest].slice(0, SUGGEST_LIMIT);
   }
 
   function visibleDishes(selected, diet, meal) {
@@ -238,23 +273,30 @@
     }
   }
 
-  function renderStatus(selected, diet, meal, matches) {
+  function renderStatus(selected, diet, meal, matches, query) {
     statusEl.classList.remove("is-quiet");
+    if ((!diet || !meal) && query && matches.length > 0) {
+      const noun = matches.length === 1 ? "recipe matches" : "recipes match";
+      statusEl.textContent = `${matches.length} ${noun} “${query}”.`;
+      return;
+    }
     if (!diet || !meal) {
       statusEl.textContent = "Choose veg or non-veg, and a meal. Each meal has its own menu.";
       return;
     }
-    if (diet === "non-veg" && !chosenProtein(selected)) {
+    const opened = matches.length === 1 && query && matches[0].name.toLowerCase() === query.toLowerCase();
+    if (diet === "non-veg" && !chosenProtein(selected) && !opened) {
       statusEl.textContent = "Choose egg, meat, or fish. One is required before recipes appear.";
       return;
     }
-    if (![...selected].some((id) => !isProtein(id))) {
-      statusEl.textContent = "Tick an ingredient. Recipes appear once one is selected.";
+    if (!query && ![...selected].some((id) => !isProtein(id))) {
+      statusEl.textContent = "Tick an ingredient, or search a dish by name.";
       return;
     }
     const dietName = diet === "veg" ? "Veg" : "Non-veg";
     const mealName = MEAL_LABEL[meal];
     const words = [dietName, mealName, ...[...selected].map(labelFor)];
+    if (query) words.push(`“${query}”`);
     const listed = words.join(", ");
     if (matches.length === 0) {
       statusEl.textContent = `Nothing matches ${listed}.`;
@@ -388,7 +430,12 @@
 
   function renderDishes(matches, selected, meal) {
     resultsEl.replaceChildren();
-    if (matches.length === 0 || !meal) return;
+    if (matches.length === 0) return;
+    if (!meal) {
+      resultsEl.append(menuHeading("Search", matches.length));
+      for (const dish of matches) resultsEl.append(dishCard(dish, selected));
+      return;
+    }
 
     const only = matches.filter((dish) => dish.meals.length === 1);
     if (only.length) {
@@ -423,9 +470,14 @@
     const ready = Boolean(diet && meal);
     const proteinReady = diet !== "non-veg" || Boolean(chosenProtein(selected));
     if (ready) pruneTicks(selected, diet, meal);
-    const pool = ready && proteinReady ? visibleDishes(selected, diet, meal) : [];
+    const query = searchQuery();
+    const picked = pickedDish && query.toLowerCase() === pickedDish.name.toLowerCase() ? pickedDish : null;
+    if (!picked) pickedDish = null;
+    const pool = ready && proteinReady
+      ? visibleDishes(selected, diet, meal).filter((dish) => matchesQuery(dish, query))
+      : [];
     const ingredientPicked = [...selected].some((id) => !isProtein(id));
-    const matches = ingredientPicked ? pool : [];
+    const matches = picked ? [picked] : ingredientPicked ? pool : [];
     const nextKey = `${diet}|${meal}`;
     const menuChanged = nextKey !== menuKey;
     menuKey = nextKey;
@@ -450,8 +502,8 @@
       void chipsEl.offsetWidth;
       chipsEl.classList.add("is-arriving");
     }
-    statusEl.classList.toggle("is-hit", ingredientPicked && matches.length > 0 && matches.length <= 6);
-    renderStatus(selected, diet, meal, matches);
+    statusEl.classList.toggle("is-hit", (ingredientPicked || query) && matches.length > 0 && matches.length <= 6);
+    renderStatus(selected, diet, meal, matches, query);
     renderDishes(matches, selected, meal);
   }
 
@@ -472,7 +524,105 @@
     saveSelected(selected);
     saveDiet("");
     saveMeal("");
+    if (searchEl) searchEl.value = "";
+    pickedDish = null;
+    hideSuggest();
     render(selected, "", "");
+  }
+
+  let pickedDish = null;
+  let suggestItems = [];
+  let suggestIndex = -1;
+
+  function hideSuggest() {
+    if (!suggestEl) return;
+    suggestEl.hidden = true;
+    suggestEl.replaceChildren();
+    suggestItems = [];
+    suggestIndex = -1;
+    if (searchEl) searchEl.setAttribute("aria-expanded", "false");
+  }
+
+  function markSuggest(index) {
+    suggestIndex = index;
+    const buttons = suggestEl.querySelectorAll("button");
+    buttons.forEach((button, i) => {
+      button.classList.toggle("is-active", i === index);
+      if (i === index) searchEl.setAttribute("aria-activedescendant", button.id);
+    });
+    if (index < 0) searchEl.removeAttribute("aria-activedescendant");
+  }
+
+  function chooseDish(dish) {
+    pickedDish = dish;
+    searchEl.value = dish.name;
+    hideSuggest();
+    render(selected, loadDiet(), loadMeal());
+    const card = resultsEl.querySelector(".dish");
+    if (card) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function showSuggest(query) {
+    if (!suggestEl) return;
+    const list = suggestionsFor(query);
+    suggestItems = list;
+    suggestIndex = -1;
+    suggestEl.replaceChildren();
+    if (!query || list.length === 0) {
+      hideSuggest();
+      return;
+    }
+    list.forEach((dish, index) => {
+      const item = document.createElement("li");
+      item.setAttribute("role", "presentation");
+      const button = document.createElement("button");
+      button.type = "button";
+      button.id = `suggest-${index}`;
+      button.setAttribute("role", "option");
+      const name = document.createElement("span");
+      name.className = "recipe-suggest-name";
+      name.textContent = dish.name;
+      const meta = document.createElement("span");
+      meta.className = "recipe-suggest-meta";
+      meta.textContent = `${dish.keyword} · ${dish.meals.map((id) => MEAL_LABEL[id]).join(", ")}`;
+      button.append(name, meta);
+      button.addEventListener("mousedown", (event) => event.preventDefault());
+      button.addEventListener("click", () => chooseDish(dish));
+      item.append(button);
+      suggestEl.append(item);
+    });
+    suggestEl.hidden = false;
+    searchEl.setAttribute("aria-expanded", "true");
+  }
+
+  if (searchEl) {
+    searchEl.addEventListener("input", () => {
+      const query = searchQuery();
+      if (pickedDish && query.toLowerCase() !== pickedDish.name.toLowerCase()) pickedDish = null;
+      showSuggest(query);
+      render(selected, loadDiet(), loadMeal());
+    });
+    searchEl.addEventListener("keydown", (event) => {
+      if (suggestEl.hidden || suggestItems.length === 0) return;
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        markSuggest((suggestIndex + 1) % suggestItems.length);
+      } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        markSuggest((suggestIndex - 1 + suggestItems.length) % suggestItems.length);
+      } else if (event.key === "Enter") {
+        event.preventDefault();
+        chooseDish(suggestItems[suggestIndex >= 0 ? suggestIndex : 0]);
+      } else if (event.key === "Escape") {
+        hideSuggest();
+      }
+    });
+    searchEl.addEventListener("focus", () => {
+      if (searchQuery() && !pickedDish) showSuggest(searchQuery());
+    });
+    searchEl.addEventListener("blur", () => {
+      hideSuggest();
+    });
   }
 
   chipsEl.addEventListener("click", (event) => {
