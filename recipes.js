@@ -15,7 +15,7 @@
     { id: "tofu", label: "Tofu", group: "kitchen" },
     { id: "soya", label: "Soya chunks", group: "kitchen" },
     { id: "lentils", label: "Lentils", group: "kitchen" },
-    { id: "chickpeas", label: "Chickpeas", group: "kitchen" },
+    { id: "chickpeas", label: "Chana", group: "kitchen" },
     { id: "rajma", label: "Rajma", group: "kitchen" },
     { id: "sprouts", label: "Sprouts", group: "kitchen" },
     { id: "peanuts", label: "Peanuts", group: "kitchen" },
@@ -386,7 +386,7 @@
     ["Lauki rice", 30, ["rice", "lauki", "onion"], "rice", "Salt the lauki and let it sit 5 minutes, then squeeze out the water. Lauki is mostly water."],
     ["Sweet potato rice", 35, ["rice", "sweetpotato", "onion"], "rice", "Cube the sweet potato small and cook it until just tender. Overcooked sweet potato dissolves into the rice."],
     ["Paneer pulao", 30, ["rice", "paneer", "onion"], "rice", "Pan-fry the paneer cubes until the faces are spotted brown, then fold them in at the end so they do not turn to rubber in the steam."],
-    ["Chickpea pulao", 35, ["rice", "chickpeas", "onion"], "rice", "The chickpeas must already be cooked tender. A hard chickpea will still be hard when the rice is done."],
+    ["Chana pulao", 35, ["rice", "chickpeas", "onion"], "rice", "The chickpeas must already be cooked tender. A hard chickpea will still be hard when the rice is done."],
     ["Rajma rice", 40, ["rice", "rajma", "onion"], "rice", "Use rajma that is fully cooked, almost creamy. Stir it through the rice gently so the rajma does not mash."],
     ["Tofu rice", 25, ["rice", "tofu", "onion"], "rice", "Press the tofu in a cloth for 10 minutes, cube it, and brown it before it meets the rice."],
     ["Soya pulao", 35, ["rice", "soya", "onion"], "rice", "Soak the soya chunks in hot water for 10 minutes, then squeeze them dry. Unsoaked soya tastes of cardboard."],
@@ -416,14 +416,14 @@
 
     ["Rajma masala", 50, ["rajma", "onion", "tomato"], "gravy", "Rajma must be fully boiled until creamy before it goes into the masala. Firm rajma will not soften in the gravy."],
     ["Chole", 50, ["chickpeas", "onion", "tomato"], "gravy", "Mash a spoonful of chickpeas into the masala. That starch is what makes chole thick without flour."],
-    ["Dry chickpeas", 35, ["chickpeas", "onion", "tomato"], "dry", "Keep the heat high at the end so the masala coats the chickpeas and does not become a curry."],
+    ["Dry chana", 35, ["chickpeas", "onion", "tomato"], "dry", "Keep the heat high at the end so the masala coats the chickpeas and does not become a curry."],
     ["Sprout curry", 30, ["sprouts", "onion", "tomato"], "gravy", "Sprouts cook fast. Simmer only 8 to 10 minutes or they turn to mush and the skins float off."],
     ["Sprout salad", 15, ["sprouts", "onion", "lemon"], "salad", "Do not cook this. Toss sprouts with onion, salt, chili, and lemon. The crunch is the point."],
-    ["Chickpea salad", 15, ["chickpeas", "onion", "tomato"], "salad", "Use cooked chickpeas, cooled. Toss, do not fry. Salt and chili are enough."],
+    ["Chana salad", 15, ["chickpeas", "onion", "tomato"], "salad", "Use cooked chickpeas, cooled. Toss, do not fry. Salt and chili are enough."],
     ["Soya curry", 35, ["soya", "onion", "tomato"], "gravy", "Soak soya chunks in hot salted water for 10 minutes, squeeze hard, then simmer them in the masala for 12 minutes so they drink it in."],
     ["Tofu curry", 30, ["tofu", "onion", "tomato"], "gravy", "Press and brown the tofu first. Soft tofu dropped into gravy breaks apart."],
     ["Peanut sabzi", 30, ["peanuts", "onion", "tomato"], "gravy", "Roast the peanuts in the dry pan until they smell sweet, then make the gravy around them."],
-    ["Chickpea spinach", 35, ["chickpeas", "spinach", "onion"], "gravy", "Wilt the spinach into the onion before the chickpeas go in, and cook off the water."],
+    ["Chana spinach", 35, ["chickpeas", "spinach", "onion"], "gravy", "Wilt the spinach into the onion before the chickpeas go in, and cook off the water."],
     ["Rajma spinach", 40, ["rajma", "spinach", "onion"], "gravy", "The rajma should be cooked through first. Spinach is added at the end so it stays green."],
     ["Soya dry fry", 25, ["soya", "onion", "capsicum"], "dry", "After soaking and squeezing, fry the soya until the edges colour, then add capsicum for the last 3 minutes."],
     ["Peanut spinach", 25, ["peanuts", "spinach", "garlic"], "dry", "Crush peanuts, fry them with garlic, then wilt the spinach. You want crunch against the leaves."],
@@ -490,7 +490,7 @@
     ["Lauki coconut", 25, ["lauki", "coconut"], "dry", "Cook peeled lauki with salt until translucent, then fold in coconut."],
     ["Pumpkin coconut", 25, ["pumpkin", "coconut"], "dry", "Soft pumpkin mashed lightly with coconut, salt, and chili. Not a soup."],
     ["Methi aloo dry", 25, ["methi", "potato", "garlic"], "dry", "Potato nearly done, then methi and garlic for 4 minutes."],
-    ["Chickpea tomato", 30, ["chickpeas", "tomato", "garlic"], "gravy", "No onion. Garlic and tomato cooked to a paste, chickpeas simmered 10 minutes."],
+    ["Chana tomato", 30, ["chickpeas", "tomato", "garlic"], "gravy", "No onion. Garlic and tomato cooked to a paste, chickpeas simmered 10 minutes."],
     ["Tofu capsicum", 20, ["tofu", "capsicum", "garlic"], "dry", "Pressed tofu, browned, capsicum and garlic for the last 3 minutes."],
 
     ["Aloo paratha", 35, ["atta", "potato"], "paratha", "The potato mash must be dry and well salted. A wet filling bursts the dough."],
@@ -1461,7 +1461,7 @@
       "Mash cooked rajma with onion until it holds together, then stuff and cook until the dough is done."
     ],
     [
-      "Chickpea paratha",
+      "Chana paratha",
       40,
       [
         "atta",
@@ -2071,7 +2071,7 @@
       "Brown the tofu and the mushrooms separately, then toss with garlic for 1 minute."
     ],
     [
-      "Chickpea potato dry",
+      "Chana potato dry",
       35,
       [
         "chickpeas",
@@ -2965,7 +2965,573 @@
     ]
   ];
 
-  const book = specs.concat(popular, street, regional);
+  const chana = [
+    [
+      "Kala chana masala",
+      45,
+      [
+        "chickpeas",
+        "onion",
+        "tomato",
+        "ginger"
+      ],
+      "gravy",
+      "Soak black chickpeas overnight and boil them soft. Fry onion, ginger, and tomato until the oil separates, then simmer the chickpeas in it for 10 minutes."
+    ],
+    [
+      "Chana dal tadka",
+      35,
+      [
+        "chickpeas",
+        "tomato",
+        "garlic",
+        "cumin"
+      ],
+      "dal",
+      "Boil split chickpea dal until soft. Fry garlic and cumin in hot oil, add tomato, and pour the tempering over the dal."
+    ],
+    [
+      "Chana dal palak",
+      40,
+      [
+        "chickpeas",
+        "spinach",
+        "garlic",
+        "onion"
+      ],
+      "dal",
+      "Boil the split chickpea dal. Fry onion and garlic, add chopped spinach and cook until it wilts, then fold the dal through."
+    ],
+    [
+      "Chana dal khichdi",
+      35,
+      [
+        "chickpeas",
+        "rice",
+        "ginger"
+      ],
+      "rice",
+      "Wash the rice and split chickpea dal together and cook them with ginger and turmeric in one pot until both are soft."
+    ],
+    [
+      "Chana dal paratha",
+      40,
+      [
+        "chickpeas",
+        "atta",
+        "onion",
+        "cumin"
+      ],
+      "paratha",
+      "Knead the atta into a soft dough. Mash boiled split chickpea dal with onion and cumin, seal a spoonful in the dough, and cook on a hot tawa with oil."
+    ],
+    [
+      "Chana dal vada",
+      30,
+      [
+        "chickpeas",
+        "onion",
+        "ginger"
+      ],
+      "dry",
+      "Soak split chickpea dal, grind it coarse with ginger, and mix in chopped onion. Fry spoonfuls in hot oil until golden and crisp."
+    ],
+    [
+      "Chana dal sundal",
+      25,
+      [
+        "chickpeas",
+        "coconut",
+        "lemon"
+      ],
+      "dry",
+      "Boil split chickpea dal until just tender. Toss with grated coconut and lemon, and serve warm."
+    ],
+    [
+      "Chana masala dry",
+      30,
+      [
+        "chickpeas",
+        "onion",
+        "tomato",
+        "capsicum"
+      ],
+      "dry",
+      "Boil the chickpeas. Fry onion, tomato, and capsicum on high heat until the pan is dry, then toss the chickpeas through so they stay whole."
+    ],
+    [
+      "Chana capsicum",
+      30,
+      [
+        "chickpeas",
+        "capsicum",
+        "onion",
+        "tomato"
+      ],
+      "gravy",
+      "Fry onion and tomato into a thick masala, add chopped capsicum and boiled chickpeas, and simmer until the capsicum is just tender."
+    ],
+    [
+      "Chana mushroom",
+      35,
+      [
+        "chickpeas",
+        "mushroom",
+        "onion",
+        "tomato"
+      ],
+      "gravy",
+      "Fry the mushrooms until they release their water and it dries off. Add onion and tomato, then the boiled chickpeas, and simmer 10 minutes."
+    ],
+    [
+      "Chana corn",
+      25,
+      [
+        "chickpeas",
+        "corn",
+        "onion",
+        "lemon"
+      ],
+      "dry",
+      "Boil the chickpeas and corn. Fry the onion, toss both through, and finish with lemon."
+    ],
+    [
+      "Chana paneer",
+      35,
+      [
+        "chickpeas",
+        "paneer",
+        "onion",
+        "tomato"
+      ],
+      "gravy",
+      "Fry the paneer cubes until lightly browned. Make an onion and tomato gravy, add the boiled chickpeas and the paneer, and simmer briefly."
+    ],
+    [
+      "Chana egg curry",
+      35,
+      [
+        "chickpeas",
+        "egg",
+        "onion",
+        "tomato"
+      ],
+      "egg",
+      "Boil the eggs and the chickpeas. Fry onion and tomato into a masala, add the chickpeas, and simmer. Halve the eggs and set them in the gravy."
+    ],
+    [
+      "Chana chicken",
+      45,
+      [
+        "chickpeas",
+        "chicken",
+        "onion",
+        "tomato"
+      ],
+      "meat",
+      "Brown the chicken with onion. Add tomato and the boiled chickpeas, then simmer until the chicken is cooked through and the gravy thickens."
+    ]
+  ];
+
+  const drinks = [
+    [
+      "Banana lassi",
+      5,
+      [
+        "banana",
+        "curd",
+        "milk"
+      ],
+      "drink",
+      "Mash a ripe banana into curd and cold milk until it pours. A green banana tastes starchy."
+    ],
+    [
+      "Coconut lassi",
+      5,
+      [
+        "coconut",
+        "curd",
+        "milk"
+      ],
+      "drink",
+      "Stir grated coconut into curd and cold milk and whisk until frothy."
+    ],
+    [
+      "Ginger lassi",
+      5,
+      [
+        "ginger",
+        "curd",
+        "milk"
+      ],
+      "drink",
+      "Grate the ginger into curd and cold milk and whisk. Strain it if you want a smooth glass."
+    ],
+    [
+      "Lemon chaas",
+      5,
+      [
+        "lemon",
+        "curd"
+      ],
+      "drink",
+      "Beat the curd with cold water until it is thin, then stir in lemon and salt."
+    ],
+    [
+      "Ginger chaas",
+      5,
+      [
+        "ginger",
+        "curd"
+      ],
+      "drink",
+      "Beat the curd with cold water and grated ginger until it is thin enough to drink."
+    ],
+    [
+      "Nimbu pani",
+      5,
+      [
+        "lemon"
+      ],
+      "drink",
+      "Stir the lemon into cold water with salt. Drink it as soon as it is mixed."
+    ],
+    [
+      "Jaljeera",
+      10,
+      [
+        "lemon",
+        "cumin",
+        "ginger"
+      ],
+      "drink",
+      "Crush the cumin and ginger, stir them into cold water with lemon and salt, and drink it cold."
+    ],
+    [
+      "Carrot shake",
+      10,
+      [
+        "carrot",
+        "milk"
+      ],
+      "drink",
+      "Grate the carrot and mash or blend it into cold milk until the glass is pale orange."
+    ],
+    [
+      "Peanut shake",
+      10,
+      [
+        "peanuts",
+        "milk"
+      ],
+      "drink",
+      "Roast the peanuts until they smell sweet, then grind them into cold milk until mostly smooth."
+    ],
+    [
+      "Oats shake",
+      10,
+      [
+        "oats",
+        "banana",
+        "milk"
+      ],
+      "drink",
+      "Soak the oats in cold milk for 10 minutes, mash in a ripe banana, and drink it straight away."
+    ],
+    [
+      "Coconut shake",
+      5,
+      [
+        "coconut",
+        "milk"
+      ],
+      "drink",
+      "Stir the coconut into cold milk and whisk until the glass smells of coconut."
+    ],
+    [
+      "Chana fry",
+      30,
+      [
+        "chickpeas",
+        "onion",
+        "tomato",
+        "ginger"
+      ],
+      "dry",
+      "Boil the chickpeas until soft. Fry onion, ginger, and tomato on high heat until the pan is dry, then toss the chickpeas through so they stay whole."
+    ],
+    [
+      "Pindi chole",
+      50,
+      [
+        "chickpeas",
+        "tomato",
+        "ginger",
+        "garlic"
+      ],
+      "gravy",
+      "No onion. Cook tomato, ginger, and garlic until the masala is dark and thick, then simmer the boiled chickpeas until the gravy almost disappears."
+    ],
+    [
+      "Chana dal fry",
+      35,
+      [
+        "chickpeas",
+        "onion",
+        "garlic",
+        "tomato"
+      ],
+      "dal",
+      "Boil split chickpea dal until soft but not broken. Fry onion, garlic, and tomato, then fold the dal through and cook until it holds its shape."
+    ],
+    [
+      "Kadai chana",
+      35,
+      [
+        "chickpeas",
+        "capsicum",
+        "onion",
+        "tomato",
+        "ginger"
+      ],
+      "gravy",
+      "Make the onion, ginger, and tomato masala first. Add boiled chickpeas and large pieces of capsicum and cook only until the capsicum is still a little crisp."
+    ],
+    [
+      "Chana do pyaza",
+      35,
+      [
+        "chickpeas",
+        "onion",
+        "ginger"
+      ],
+      "gravy",
+      "Cook one lot of onion until deep brown, add the ginger and boiled chickpeas, then stir in a second lot of onion near the end so it stays a little sharp."
+    ],
+    [
+      "Chana pakora",
+      25,
+      [
+        "chickpeas",
+        "besan",
+        "onion"
+      ],
+      "dry",
+      "Mash the boiled chickpeas with onion, coat small balls in a thick besan batter, and fry until the crust is golden."
+    ],
+    [
+      "Chana tikki",
+      30,
+      [
+        "chickpeas",
+        "potato",
+        "onion"
+      ],
+      "dry",
+      "Mash boiled chickpeas with boiled potato and onion. Shape flat rounds and pan-cook until both sides are brown."
+    ],
+    [
+      "Chana cutlet",
+      30,
+      [
+        "chickpeas",
+        "potato",
+        "bread"
+      ],
+      "dry",
+      "Mash boiled chickpeas with potato, shape ovals, coat them with bread crumbs if you have them, and pan-cook until brown."
+    ],
+    [
+      "Chana biryani",
+      45,
+      [
+        "chickpeas",
+        "rice",
+        "onion",
+        "tomato"
+      ],
+      "rice",
+      "Brown the onion, cook the tomato, fold in boiled chickpeas and the rice, and steam until the rice is done."
+    ],
+    [
+      "Lasooni chana",
+      30,
+      [
+        "chickpeas",
+        "garlic",
+        "tomato"
+      ],
+      "gravy",
+      "Fry a lot of sliced garlic until it is just gold, add the tomato, then simmer the boiled chickpeas until the gravy coats them."
+    ],
+    [
+      "Chana coconut",
+      35,
+      [
+        "chickpeas",
+        "coconut",
+        "onion"
+      ],
+      "gravy",
+      "Fry the onion, add boiled chickpeas and grated coconut, and cook until the coconut turns pale gold and the pan is almost dry."
+    ],
+    [
+      "Chana dal chilla",
+      25,
+      [
+        "chickpeas",
+        "onion"
+      ],
+      "breakfast",
+      "Soak split chickpea dal and grind it to a thick batter with onion. Spread thin rounds on a hot tawa and cook both sides until spotted brown."
+    ],
+    [
+      "Chana dal halwa",
+      40,
+      [
+        "chickpeas",
+        "butter",
+        "milk"
+      ],
+      "gravy",
+      "Grind soaked split chickpea dal. Cook it in butter until it smells toasted, then stir in milk a little at a time until it turns glossy."
+    ],
+    [
+      "Amritsari chole",
+      50,
+      [
+        "chickpeas",
+        "onion",
+        "tomato",
+        "ginger"
+      ],
+      "gravy",
+      "Cook the onion, ginger, and tomato until the masala is dark, then simmer the boiled chickpeas until the gravy is thick and the chickpeas are creamy."
+    ],
+    [
+      "Chana soup",
+      30,
+      [
+        "chickpeas",
+        "tomato",
+        "ginger",
+        "onion"
+      ],
+      "gravy",
+      "Simmer boiled chickpeas with onion, tomato, and ginger in plenty of water, then mash some of them so the soup turns thick."
+    ],
+    [
+      "Chana roll",
+      25,
+      [
+        "chickpeas",
+        "bread",
+        "onion"
+      ],
+      "dry",
+      "Mash the boiled chickpeas with onion and chili, pack them into a toasted bread roll, and eat it warm."
+    ]
+  ];
+
+  const blackChana = [
+    [
+      "Kala chana usal",
+      40,
+      [
+        "chickpeas",
+        "onion",
+        "coconut",
+        "lemon"
+      ],
+      "dry",
+      "Soak black chana overnight and boil it until soft. Fry onion until golden, toss the chana through with grated coconut and lemon, and cook dry until every piece is coated."
+    ],
+    [
+      "Kala chana pulao",
+      40,
+      [
+        "rice",
+        "chickpeas",
+        "onion"
+      ],
+      "rice",
+      "Boil the black chana until tender before you start. Fry the onion until soft, add the chana and rice together, and cook with water until the rice is done."
+    ],
+    [
+      "Kala chana paratha",
+      40,
+      [
+        "atta",
+        "chickpeas",
+        "onion"
+      ],
+      "paratha",
+      "Knead the atta into a soft dough. Mash the boiled black chana coarse with onion and salt, fill the dough, roll it out, and cook on a hot tawa with ghee."
+    ],
+    [
+      "Kala chana sundal",
+      25,
+      [
+        "chickpeas",
+        "coconut",
+        "lemon"
+      ],
+      "dry",
+      "Boil black chana until soft. Toss with grated coconut and lemon, and serve warm with a pinch of salt and chili."
+    ],
+    [
+      "Kala chana bhel",
+      15,
+      [
+        "chickpeas",
+        "puffedrice",
+        "onion",
+        "tomato",
+        "lemon",
+        "peanuts"
+      ],
+      "salad",
+      "Boil the black chana and let it cool. Toss puffed rice with chana, onion, tomato, roasted peanuts, and lemon just before eating."
+    ],
+    [
+      "Kala chana chilla",
+      30,
+      [
+        "chickpeas",
+        "onion"
+      ],
+      "breakfast",
+      "Soak black chana overnight, then grind it to a thick batter with onion and salt. Spread thin rounds on a hot tawa and cook until both sides are spotted brown."
+    ],
+    [
+      "Kala chana sprouts salad",
+      15,
+      [
+        "chickpeas",
+        "sprouts",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Use boiled black chana and crunchy sprouts. Toss with onion, tomato, salt, and lemon, and eat soon after mixing."
+    ],
+    [
+      "Kala chana aloo",
+      35,
+      [
+        "chickpeas",
+        "potato",
+        "onion",
+        "tomato",
+        "ginger"
+      ],
+      "gravy",
+      "Boil the black chana with a pinch of baking soda until soft. Fry onion, ginger, and tomato, add the potato cubes and chana, and simmer until the potato is tender."
+    ]
+  ];
+
+  const book = specs.concat(popular, street, regional, chana, drinks, blackChana);
 
   // One major per recipe: the ingredient the title is about.
   // A base such as rice or atta is the major only when the title names nothing else.
@@ -3102,7 +3668,7 @@
     else if (/manchurian|\b65\b|chilli paneer|chilli chicken|chilli potato|chilli mushroom|crispy corn/.test(n)) add("snack", "dinner");
     else if (/roll|burger|pav bhaji|\bpav\b/.test(n)) add("snack", "lunch");
     else if (/halwa|kheer|ladoo|payasam|meetha/.test(n)) add("snack");
-    else if (/shake|lassi|masala milk|banana curd|chaas|mishti/.test(n)) add("breakfast");
+    else if (/shake|lassi|masala milk|banana curd|chaas|mishti/.test(n) || method === "drink") add("breakfast");
     else if (/toast|sandwich|garlic bread|bread omelette/.test(n)) add("breakfast");
     else if (/poha|upma|idli|dosa|uttapam|oats|vermicelli|chilla|pesarattu|\badai\b|appam|puttu|pongal|misal|\bmash\b/.test(n)) add("breakfast");
     else if (/omelette|bhurji/.test(n) || ["garlic eggs", "onion eggs", "anda ghotala", "potato egg", "capsicum egg", "peas egg"].includes(n)) add("breakfast");
