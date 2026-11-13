@@ -2326,7 +2326,646 @@
     ]
   ];
 
-  const book = specs.concat(popular, street);
+  const regional = [
+    [
+      "Dalma",
+      45,
+      [
+        "lentils",
+        "pumpkin",
+        "potato",
+        "carrot",
+        "ginger"
+      ],
+      "dal",
+      "Cook the chana dal soft with turmeric. Simmer the pumpkin, potato, and carrot in it until they break slightly at the edges. Finish with cumin and ginger in a hot tempering."
+    ],
+    [
+      "Pakhala bhata",
+      20,
+      [
+        "rice",
+        "curd",
+        "cumin"
+      ],
+      "rice",
+      "Soak cooked rice overnight in plenty of water. In the morning, drain it, mix in curd and salt, and temper with roasted cumin and green chili."
+    ],
+    [
+      "Baingan bhaja",
+      20,
+      [
+        "eggplant",
+        "onion"
+      ],
+      "dry",
+      "Slice the eggplant into thick rounds, coat with turmeric and salt, and shallow fry in hot oil until crisp. Serve with onion rings and a bowl of dal."
+    ],
+    [
+      "Santula",
+      30,
+      [
+        "potato",
+        "eggplant",
+        "beans",
+        "garlic"
+      ],
+      "dry",
+      "Cut the vegetables into equal pieces and boil them lightly with turmeric. Temper with crushed garlic and cumin in hot oil and toss until every piece is coated."
+    ],
+    [
+      "Cholar dal",
+      40,
+      [
+        "lentils",
+        "coconut",
+        "ginger"
+      ],
+      "dal",
+      "Cook chana dal with ginger and turmeric until soft. Fry coconut slices in ghee until golden and add them to the dal with a pinch of sugar."
+    ],
+    [
+      "Macher jhol",
+      30,
+      [
+        "fish",
+        "potato",
+        "tomato",
+        "ginger"
+      ],
+      "gravy",
+      "Fry the fish pieces lightly in turmeric. Simmer potato and tomato in a thin gravy with ginger and green chili, then slide in the fish for the last 5 minutes."
+    ],
+    [
+      "Chingudi jhola",
+      35,
+      [
+        "prawns",
+        "potato",
+        "onion",
+        "tomato"
+      ],
+      "gravy",
+      "Fry the potato cubes until golden. Make a tomato and onion gravy, add the prawns and cook until pink, then add the potatoes back in."
+    ],
+    [
+      "Dahi bara aloo dum",
+      50,
+      [
+        "lentils",
+        "curd",
+        "potato",
+        "onion",
+        "tomato"
+      ],
+      "breakfast",
+      "Soak urad lentils, grind to a thick batter, and fry small dumplings. Soak them in lightly spiced curd. Serve topped with dum aloo cooked in a tomato and onion gravy."
+    ],
+    [
+      "Shukto",
+      45,
+      [
+        "pumpkin",
+        "potato",
+        "beans",
+        "milk",
+        "ginger"
+      ],
+      "gravy",
+      "Simmer the vegetables in water with turmeric until tender. Add milk and ginger, and let it warm through slowly so it stays creamy."
+    ],
+    [
+      "Aloo pyaaz bhaja",
+      20,
+      [
+        "potato",
+        "onion"
+      ],
+      "dry",
+      "Slice potato and onion thin. Fry in hot oil on medium heat, turning often, until the edges turn brown and crisp. Season with salt and green chili."
+    ],
+    [
+      "Mixed vegetable ghanta",
+      40,
+      [
+        "potato",
+        "pumpkin",
+        "beans",
+        "lentils",
+        "ginger"
+      ],
+      "dal",
+      "Boil the vegetables with split lentils until they break into a thick mash. Temper with cumin, ginger, and a pinch of turmeric."
+    ],
+    [
+      "Ambila",
+      35,
+      [
+        "besan",
+        "curd",
+        "beans",
+        "pumpkin",
+        "garlic"
+      ],
+      "dal",
+      "Cook the vegetables in water until tender. Whisk besan with curd and stir it in. Temper with cumin and garlic and simmer briefly."
+    ],
+    [
+      "Thepla",
+      35,
+      [
+        "atta",
+        "methi",
+        "curd"
+      ],
+      "paratha",
+      "Knead the atta with chopped methi, curd, turmeric, and salt into a soft dough. Roll thin rounds and cook on a hot tawa with a little oil until spotted brown."
+    ],
+    [
+      "Pithla",
+      25,
+      [
+        "besan",
+        "onion",
+        "garlic",
+        "tomato"
+      ],
+      "dal",
+      "Fry garlic and onion in oil. Add the tomato and cook until soft. Stir in besan with water to make a thick porridge and cook for 5 minutes, stirring continuously."
+    ],
+    [
+      "Zunka",
+      25,
+      [
+        "besan",
+        "onion",
+        "garlic"
+      ],
+      "dry",
+      "Dry roast the besan on low heat until it smells nutty. Fry onion and garlic in oil, then stir in the besan with water and cook until it crumbles."
+    ],
+    [
+      "Sev tameta",
+      20,
+      [
+        "tomato",
+        "besan",
+        "onion"
+      ],
+      "gravy",
+      "Cook onion and tomato with turmeric and chili into a thick sauce. Top with crisp besan sev just before serving."
+    ],
+    [
+      "Dal dhokli",
+      50,
+      [
+        "atta",
+        "lentils",
+        "tomato",
+        "peanuts"
+      ],
+      "dal",
+      "Knead the atta into a firm dough. Roll thin strips and drop them into the simmering spiced lentils with tomato and roasted peanuts. Cook until the dhokli is tender."
+    ],
+    [
+      "Kanda bhaji",
+      20,
+      [
+        "onion",
+        "besan"
+      ],
+      "dry",
+      "Slice onion thin, toss with besan, salt, and chili, and fry small clumps in hot oil until crisp at the edges."
+    ],
+    [
+      "Batata bhaji",
+      25,
+      [
+        "potato",
+        "lemon",
+        "onion"
+      ],
+      "dry",
+      "Fry mustard seeds in oil, add onion and turmeric, then potatoes. Cover and cook until tender. Finish with lemon and fresh coriander."
+    ],
+    [
+      "Bhutte ka kees",
+      25,
+      [
+        "corn",
+        "milk",
+        "ginger",
+        "lemon"
+      ],
+      "breakfast",
+      "Grate the corn on a coarse grater. Cook it in a little milk with ginger and green chili until creamy. Finish with lemon."
+    ],
+    [
+      "Thalipeeth",
+      35,
+      [
+        "atta",
+        "besan",
+        "onion",
+        "methi"
+      ],
+      "paratha",
+      "Knead atta, besan, chopped onion, methi, and chili into a soft dough. Pat it onto a damp cloth and cook on a hot tawa with oil until golden."
+    ],
+    [
+      "Undhiyu",
+      60,
+      [
+        "potato",
+        "beans",
+        "peas",
+        "eggplant",
+        "methi",
+        "ginger"
+      ],
+      "gravy",
+      "Mix the vegetables with ginger, chili, and methi. Cook them slowly in a covered pot until tender and fragrant. Serve with puri."
+    ],
+    [
+      "Spinach saag",
+      40,
+      [
+        "spinach",
+        "garlic",
+        "ginger",
+        "besan"
+      ],
+      "gravy",
+      "Cook spinach with garlic and ginger until soft, then blend. Stir in besan with water and simmer 10 minutes. Temper with cumin and garlic."
+    ],
+    [
+      "Aloo ke gutke",
+      20,
+      [
+        "potato",
+        "cumin",
+        "onion"
+      ],
+      "dry",
+      "Boil the potatoes, crush them lightly with your hand, and toss in hot oil with cumin, dried chili, and onion until the edges crisp."
+    ],
+    [
+      "Matar chaat",
+      20,
+      [
+        "peas",
+        "potato",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Boil the peas and potato. Toss with onion, tomato, chili, and lemon. Eat right away."
+    ],
+    [
+      "Chana madra",
+      50,
+      [
+        "chickpeas",
+        "curd",
+        "ginger",
+        "onion"
+      ],
+      "gravy",
+      "Soak chickpeas overnight and boil them soft. Make a yoghurt gravy with ginger and onion, add the chickpeas, and simmer gently so the curd holds together."
+    ],
+    [
+      "Gatte ki sabzi",
+      45,
+      [
+        "besan",
+        "curd",
+        "tomato"
+      ],
+      "gravy",
+      "Knead besan with spices into a firm dough. Shape into small rounds, boil them, then simmer in a tomato and curd gravy."
+    ],
+    [
+      "Bedmi puri aloo",
+      50,
+      [
+        "atta",
+        "lentils",
+        "potato",
+        "tomato"
+      ],
+      "paratha",
+      "Knead atta into a dough. Stuff with soaked and ground urad lentils spiced with cumin, roll, and deep fry. Serve with a dry potato and tomato sabzi."
+    ],
+    [
+      "Mirchi vada",
+      30,
+      [
+        "potato",
+        "besan"
+      ],
+      "dry",
+      "Slit large green chilies and remove the seeds. Fill with spiced potato, dip in besan batter, and fry until golden."
+    ],
+    [
+      "Pyaaz kachori",
+      40,
+      [
+        "atta",
+        "onion",
+        "besan"
+      ],
+      "paratha",
+      "Knead atta into a firm dough. Mix onion with besan and spices, fill small balls, roll, and deep fry until the crust blisters."
+    ],
+    [
+      "Dhuska",
+      35,
+      [
+        "rice",
+        "lentils",
+        "onion"
+      ],
+      "breakfast",
+      "Soak rice and urad lentils overnight, then grind to a thick batter with onion and salt. Fry spoonfuls in hot oil until puffed and golden."
+    ],
+    [
+      "Babru",
+      40,
+      [
+        "atta",
+        "lentils"
+      ],
+      "paratha",
+      "Knead atta into a soft dough. Soak black gram and grind into a coarse paste with spices. Stuff small balls, roll flat, and cook on a tawa with ghee."
+    ],
+    [
+      "Litti chokha",
+      50,
+      [
+        "atta",
+        "besan",
+        "eggplant",
+        "tomato"
+      ],
+      "paratha",
+      "Knead atta into a dough. Stuff with roasted besan and spices, shape balls, and bake them on the stove flame until the outside is charred. Mash charred eggplant with tomato and serve with the litti."
+    ],
+    [
+      "Baingan chokha",
+      30,
+      [
+        "eggplant",
+        "tomato",
+        "onion",
+        "garlic"
+      ],
+      "dry",
+      "Roast the eggplant over a flame until the skin is charred and smoky. Peel and mash with garlic, onion, tomato, and salt. Mix in oil and fresh chili."
+    ],
+    [
+      "Dal baati",
+      70,
+      [
+        "atta",
+        "lentils",
+        "ginger"
+      ],
+      "dal",
+      "Knead atta into a stiff dough, shape balls, and bake them until golden. Cook the lentils with ginger and spices. Break the baati, pour ghee over, and serve with the dal."
+    ],
+    [
+      "Punugulu",
+      30,
+      [
+        "rice",
+        "lentils",
+        "onion",
+        "coconut"
+      ],
+      "breakfast",
+      "Soak rice and urad lentils, grind to a thick batter, and mix in onion. Drop spoonfuls into hot oil and fry until golden. Serve with coconut chutney."
+    ],
+    [
+      "Maddur vada",
+      35,
+      [
+        "suji",
+        "atta",
+        "onion",
+        "curd"
+      ],
+      "dry",
+      "Mix suji, atta, onion, and curd with spices into a soft batter. Pat into thin patties and shallow fry until golden and crisp."
+    ],
+    [
+      "Spinach kootu",
+      35,
+      [
+        "spinach",
+        "lentils",
+        "coconut",
+        "cumin"
+      ],
+      "dal",
+      "Cook the lentils soft with turmeric. Add chopped spinach and cook until it wilts. Grind coconut with cumin, add it to the pan, and simmer briefly."
+    ],
+    [
+      "Pazham pori",
+      25,
+      [
+        "banana",
+        "atta",
+        "milk"
+      ],
+      "dry",
+      "Mix atta, milk, and a pinch of salt into a thick batter. Dip ripe banana slices in the batter and fry until golden. Serve hot."
+    ],
+    [
+      "Kerala egg roast",
+      30,
+      [
+        "egg",
+        "onion",
+        "tomato",
+        "ginger"
+      ],
+      "egg",
+      "Boil and halve the eggs. Fry onion and ginger until deep brown, add tomato and spices, then toss the eggs in the masala so they absorb it."
+    ],
+    [
+      "Meen moilee",
+      35,
+      [
+        "fish",
+        "coconut",
+        "milk",
+        "ginger",
+        "tomato"
+      ],
+      "gravy",
+      "Marinate the fish in turmeric and salt. Simmer ginger and tomato, then add coconut milk and the fish. Cook gently until the fish is just done."
+    ],
+    [
+      "Anda bhurji pav",
+      20,
+      [
+        "egg",
+        "onion",
+        "tomato",
+        "bread"
+      ],
+      "egg",
+      "Scramble the eggs with onion, tomato, and chili in a little oil. Toast the pav and fill it with the bhurji."
+    ],
+    [
+      "Ros omelette",
+      25,
+      [
+        "egg",
+        "coconut",
+        "tomato",
+        "onion"
+      ],
+      "egg",
+      "Beat the eggs and cook them into a soft omelette. Make a coconut and tomato gravy with onion and spices, then pour it over the omelette and serve."
+    ],
+    [
+      "Prawn balchao",
+      35,
+      [
+        "prawns",
+        "onion",
+        "tomato",
+        "garlic"
+      ],
+      "meat",
+      "Fry onion and garlic until golden. Add tomato, chili, and salt and cook down to a thick masala. Add the prawns and cook until they curl and turn pink."
+    ],
+    [
+      "Double ka meetha",
+      45,
+      [
+        "bread",
+        "milk",
+        "butter"
+      ],
+      "gravy",
+      "Fry bread slices in butter until golden. Simmer milk with sugar and cardamom until it thickens. Pour over the bread and rest 10 minutes."
+    ],
+    [
+      "Masor tenga",
+      35,
+      [
+        "fish",
+        "tomato",
+        "lemon",
+        "ginger"
+      ],
+      "gravy",
+      "Fry the fish lightly. Simmer tomato and ginger in water, add the fish, and finish with a squeeze of lemon."
+    ],
+    [
+      "Aloo pitika",
+      20,
+      [
+        "potato",
+        "onion",
+        "garlic"
+      ],
+      "dry",
+      "Boil the potatoes and mash them roughly while warm. Mix in finely chopped onion, garlic, green chili, oil, and salt."
+    ],
+    [
+      "Bhindi sorsori",
+      25,
+      [
+        "okra",
+        "onion"
+      ],
+      "dry",
+      "Slice okra thin and fry in hot oil with a pinch of turmeric until it is firm and no longer slimy. Add onion and cook until golden."
+    ],
+    [
+      "Mysore bonda",
+      35,
+      [
+        "atta",
+        "curd",
+        "ginger",
+        "onion"
+      ],
+      "dry",
+      "Mix atta, curd, grated ginger, onion, and curry leaves into a thick batter. Drop spoonfuls in hot oil and fry until golden and puffed."
+    ],
+    [
+      "Neer dosa",
+      25,
+      [
+        "rice",
+        "coconut"
+      ],
+      "breakfast",
+      "Soak rice and grind it with coconut into a thin batter. Pour thin rounds on a hot tawa and cook until the edges lift. Cook one side only."
+    ],
+    [
+      "Puttu",
+      30,
+      [
+        "rice",
+        "coconut"
+      ],
+      "breakfast",
+      "Moisten rice flour with salt and water until it crumbles. Layer with coconut in a steamer tube and steam until cooked through, about 5 minutes."
+    ],
+    [
+      "Appam",
+      35,
+      [
+        "rice",
+        "coconut"
+      ],
+      "breakfast",
+      "Soak rice and grind it with coconut and a spoon of cooked rice into a batter. Let it ferment overnight, then swirl in a hot appam pan until the edges are lacy."
+    ],
+    [
+      "Olan",
+      35,
+      [
+        "lauki",
+        "beans",
+        "coconut"
+      ],
+      "gravy",
+      "Simmer lauki and beans in water until tender. Add ground coconut with cumin and green chili, and warm through. Finish with coconut oil and curry leaves."
+    ],
+    [
+      "Aloo tamatar jhol",
+      30,
+      [
+        "potato",
+        "tomato",
+        "ginger",
+        "cumin"
+      ],
+      "gravy",
+      "Fry cumin and ginger in oil. Add tomato and potato and cook with water until a thin gravy forms. Simmer until the potato is tender."
+    ],
+    [
+      "Kafuli",
+      40,
+      [
+        "spinach",
+        "methi",
+        "onion",
+        "besan"
+      ],
+      "gravy",
+      "Cook spinach and methi with onion. Blend into a smooth green paste, stir in besan to thicken it, and simmer with ghee and spices."
+    ]
+  ];
+
+  const book = specs.concat(popular, street, regional);
 
   // One major per recipe: the ingredient the title is about.
   // A base such as rice or atta is the major only when the title names nothing else.
@@ -2459,10 +3098,10 @@
       for (const id of ids) set.add(id);
     };
 
-    if (/pakora|tikki|samosa|\bvada\b|cutlet|bhajiya|chaat|bhel|dhokla|khandvi|handvo|\bdevil\b|puchka|muri|churumuri|dabeli|kachori|bajji|bonda|golgappa/.test(n)) add("snack");
+    if (/pakora|tikki|samosa|\bvada\b|cutlet|bhajiya|chaat|bhel|dhokla|khandvi|handvo|\bdevil\b|puchka|muri|churumuri|dabeli|kachori|bajji|bonda|golgappa|kanda bhaji|punugulu|pazham pori/.test(n)) add("snack");
     else if (/manchurian|\b65\b|chilli paneer|chilli chicken|chilli potato|chilli mushroom|crispy corn/.test(n)) add("snack", "dinner");
     else if (/roll|burger|pav bhaji|\bpav\b/.test(n)) add("snack", "lunch");
-    else if (/halwa|kheer|ladoo|payasam/.test(n)) add("snack");
+    else if (/halwa|kheer|ladoo|payasam|meetha/.test(n)) add("snack");
     else if (/shake|lassi|masala milk|banana curd|chaas|mishti/.test(n)) add("breakfast");
     else if (/toast|sandwich|garlic bread|bread omelette/.test(n)) add("breakfast");
     else if (/poha|upma|idli|dosa|uttapam|oats|vermicelli|chilla|pesarattu|\badai\b|appam|puttu|pongal|misal|\bmash\b/.test(n)) add("breakfast");
