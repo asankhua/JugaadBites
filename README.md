@@ -4,7 +4,7 @@ Cook what you have. Not what you lack.
 
 You open the fridge, see rice, onion, and a bit of paneer, and still cannot decide what to make. Most recipes start from a shopping list. JugaadBites starts from the shelf. Tick what is already in the kitchen and it shows only the home dishes those ingredients can make.
 
-390 everyday Indian recipes. 51 ingredients. No account, no shopping list, and nothing leaves the browser.
+529 everyday Indian recipes. 52 ingredients. No account, no shopping list, and nothing leaves the browser.
 
 ## The problem
 

@@ -66,11 +66,9 @@
   }
 
   const counters = document.querySelectorAll("[data-count]");
-  if (window.PantryData) {
-    const recipes = document.querySelector("[data-count]");
-    const ingredients = document.querySelector('[data-count="51"]');
-    if (recipes) recipes.dataset.count = String(window.PantryData.dishes.length);
-    if (ingredients) ingredients.dataset.count = String(window.PantryData.ingredients.length);
+  if (window.PantryData && counters.length >= 2) {
+    counters[0].dataset.count = String(window.PantryData.dishes.length);
+    counters[1].dataset.count = String(window.PantryData.ingredients.length);
   }
   counters.forEach(countUp);
 })();

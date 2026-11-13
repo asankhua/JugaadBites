@@ -47,6 +47,7 @@
     { id: "garlic", label: "Garlic", group: "kitchen" },
     { id: "coconut", label: "Coconut", group: "kitchen" },
     { id: "banana", label: "Banana", group: "kitchen" },
+    { id: "puffedrice", label: "Puffed rice", group: "kitchen" },
     { id: "egg", label: "Egg", group: "nonveg" },
     { id: "chicken", label: "Chicken", group: "nonveg" },
     { id: "mutton", label: "Mutton", group: "nonveg" },
@@ -784,11 +785,1552 @@
     ["Kachumber", 10, ["onion", "tomato", "carrot", "lemon"], "salad", "Cut the onion, tomato, and carrot small and toss with lemon and salt just before the meal."]
   ];
 
-  const book = specs.concat(popular);
+  const street = [
+    [
+      "Jhal muri",
+      15,
+      [
+        "puffedrice",
+        "onion",
+        "potato",
+        "tomato",
+        "peanuts",
+        "lemon",
+        "coconut"
+      ],
+      "salad",
+      "Toss puffed rice with boiled potato, onion, tomato, peanuts, and coconut. Lemon goes on last. Eat it at once or the puffed rice turns soft."
+    ],
+    [
+      "Churumuri",
+      15,
+      [
+        "puffedrice",
+        "onion",
+        "tomato",
+        "carrot",
+        "lemon",
+        "coconut"
+      ],
+      "salad",
+      "Mysore style. Keep the carrot raw and fine. Toss the puffed rice only when you are ready to eat."
+    ],
+    [
+      "Puchka",
+      40,
+      [
+        "atta",
+        "potato",
+        "chickpeas",
+        "onion",
+        "lemon"
+      ],
+      "paratha",
+      "Roll the dough into bite-size discs and fry them until they puff. Crack a hole, fill with mashed potato and chickpeas, and finish with lemon water."
+    ],
+    [
+      "Golgappa",
+      40,
+      [
+        "atta",
+        "potato",
+        "lemon",
+        "onion"
+      ],
+      "paratha",
+      "The puri must be thin enough to shatter. Fill it with potato and onion and eat it before the shell softens."
+    ],
+    [
+      "Dahi vada",
+      30,
+      [
+        "lentils",
+        "onion",
+        "curd"
+      ],
+      "breakfast",
+      "Grind soaked lentils with onion, fry small rounds until golden, dip them in water, squeeze, and cover with beaten curd."
+    ],
+    [
+      "Papdi chaat",
+      25,
+      [
+        "atta",
+        "potato",
+        "chickpeas",
+        "onion",
+        "curd"
+      ],
+      "breakfast",
+      "Fry small crisp discs of dough. Top them with potato, chickpeas, onion, and thick curd just before serving."
+    ],
+    [
+      "Masala puri chaat",
+      30,
+      [
+        "atta",
+        "peas",
+        "onion",
+        "tomato"
+      ],
+      "gravy",
+      "Bengaluru style. Break crisp puris into a thin peas gravy so they stay a little crunchy."
+    ],
+    [
+      "Dabeli",
+      25,
+      [
+        "potato",
+        "peanuts",
+        "onion",
+        "bread",
+        "lemon"
+      ],
+      "breakfast",
+      "Mash the potato with peanuts, raw onion, and lemon, and pack it into a toasted bread roll."
+    ],
+    [
+      "Dal kachori",
+      40,
+      [
+        "atta",
+        "lentils",
+        "onion"
+      ],
+      "paratha",
+      "Cook the lentils dry with onion, seal a spoonful in dough, and fry until the crust blisters."
+    ],
+    [
+      "Banana bajji",
+      20,
+      [
+        "banana",
+        "besan"
+      ],
+      "dry",
+      "Use ripe but firm banana. Dip thick slices in a stiff besan batter and fry until the coating is deep gold."
+    ],
+    [
+      "Egg chaat",
+      15,
+      [
+        "egg",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Halve boiled eggs and toss them with onion, tomato, and lemon. Do not cook it again."
+    ],
+    [
+      "Peanut chaat",
+      15,
+      [
+        "peanuts",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Roast the peanuts until they smell sweet, then toss them with raw onion, tomato, and lemon."
+    ],
+    [
+      "Sprouts chaat",
+      15,
+      [
+        "sprouts",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Use crunchy sprouts. Toss with onion, tomato, and lemon and eat the same hour."
+    ],
+    [
+      "Keema pav",
+      35,
+      [
+        "mutton",
+        "onion",
+        "tomato",
+        "bread"
+      ],
+      "meat",
+      "Cook the minced mutton with onion and tomato until the pan is dry, then tuck it into toasted bread."
+    ],
+    [
+      "Corn chaat",
+      15,
+      [
+        "corn",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Boil the corn, drain it well, and toss with raw onion, tomato, and lemon."
+    ],
+    [
+      "Aloo bonda",
+      25,
+      [
+        "potato",
+        "besan",
+        "onion"
+      ],
+      "dry",
+      "Mash the potato with onion, wrap balls in thick besan batter, and fry until the crust is crisp."
+    ],
+    [
+      "Sev puri chaat",
+      20,
+      [
+        "besan",
+        "potato",
+        "onion",
+        "tomato"
+      ],
+      "breakfast",
+      "Fry a thin besan batter into crisp sev. Pile it on potato, onion, and tomato and eat at once."
+    ],
+    [
+      "Potato bread roll",
+      30,
+      [
+        "bread",
+        "potato",
+        "onion"
+      ],
+      "dry",
+      "Flatten a slice of bread, roll mashed potato and onion inside, and pan-cook until the outside is crisp."
+    ],
+    [
+      "Paneer bread roll",
+      25,
+      [
+        "bread",
+        "paneer",
+        "onion"
+      ],
+      "dry",
+      "Crumble paneer with onion, roll it in bread, and pan-cook until the bread is brown and the filling is hot."
+    ],
+    [
+      "Chicken pav",
+      30,
+      [
+        "chicken",
+        "onion",
+        "tomato",
+        "bread"
+      ],
+      "meat",
+      "Cook the chicken in onion and tomato until the gravy clings, then serve it in a soft bread roll."
+    ],
+    [
+      "Egg pav",
+      20,
+      [
+        "egg",
+        "onion",
+        "tomato",
+        "bread"
+      ],
+      "egg",
+      "Scramble the egg with onion and tomato until just set, and spoon it into a toasted roll."
+    ],
+    [
+      "Rajma chaat",
+      20,
+      [
+        "rajma",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Use cooked rajma, cooled. Toss with onion, tomato, and lemon. Do not heat it."
+    ],
+    [
+      "Paneer chaat",
+      15,
+      [
+        "paneer",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Cube the paneer and toss it with onion, tomato, and lemon. Warm paneer weeps, so keep it cool."
+    ],
+    [
+      "Sweet potato chaat",
+      20,
+      [
+        "sweetpotato",
+        "onion",
+        "lemon"
+      ],
+      "salad",
+      "Boil the sweet potato, cube it, and toss with raw onion and lemon while it is still warm."
+    ],
+    [
+      "Capsicum chaat",
+      15,
+      [
+        "capsicum",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Cut the capsicum small and raw. Toss with onion, tomato, and lemon."
+    ],
+    [
+      "Cabbage pakora",
+      25,
+      [
+        "cabbage",
+        "besan"
+      ],
+      "dry",
+      "Shred the cabbage fine and fold it into a thick besan batter. Fry spoonfuls until the edges are lacy and brown."
+    ],
+    [
+      "Cauliflower pakora",
+      25,
+      [
+        "cauliflower",
+        "besan"
+      ],
+      "dry",
+      "Use small florets. Coat them in thick besan batter and fry until the stem is tender and the crust is crisp."
+    ],
+    [
+      "Corn pakora",
+      20,
+      [
+        "corn",
+        "besan",
+        "onion"
+      ],
+      "dry",
+      "Fold corn and onion into a stiff besan batter and fry small cakes until both sides are brown."
+    ],
+    [
+      "Methi pakora",
+      25,
+      [
+        "methi",
+        "besan",
+        "onion"
+      ],
+      "dry",
+      "Chop the methi fine, mix it with besan and onion, and fry until the leaves turn crisp, not black."
+    ],
+    [
+      "Lauki pakora",
+      25,
+      [
+        "lauki",
+        "besan"
+      ],
+      "dry",
+      "Grate the lauki and squeeze it hard. Mix with besan and fry until the centre is cooked and the outside is brown."
+    ],
+    [
+      "Potato peas tikki",
+      30,
+      [
+        "potato",
+        "peas"
+      ],
+      "dry",
+      "Mash boiled potato with cooked peas, shape thick cakes, and pan-cook until both sides have a crust."
+    ],
+    [
+      "Corn tikki",
+      25,
+      [
+        "corn",
+        "potato",
+        "onion"
+      ],
+      "dry",
+      "Mash potato with corn and onion. The cakes should be dry enough to hold, then fry until brown."
+    ],
+    [
+      "Prawn pakora",
+      20,
+      [
+        "prawns",
+        "besan"
+      ],
+      "dry",
+      "Pat the prawns dry, dip them in thick besan batter, and fry only until they curl and the coating is gold."
+    ],
+    [
+      "Egg pakora",
+      20,
+      [
+        "egg",
+        "besan",
+        "onion"
+      ],
+      "dry",
+      "Slice boiled eggs, coat them in besan batter with onion, and fry until the crust is crisp."
+    ],
+    [
+      "Mutton tikki",
+      30,
+      [
+        "mutton",
+        "potato",
+        "onion"
+      ],
+      "dry",
+      "Cook the minced mutton with onion until dry, mix with mashed potato, and pan-cook thick cakes until brown."
+    ],
+    [
+      "Onion tomato chaat",
+      10,
+      [
+        "onion",
+        "tomato",
+        "lemon",
+        "peanuts"
+      ],
+      "salad",
+      "A raw chaat. Fine onion, tomato, roasted peanuts, and lemon. Salt at the last minute."
+    ],
+    [
+      "Bread chaat",
+      15,
+      [
+        "bread",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Toast the bread, break it into pieces, and toss with onion, tomato, and lemon so it stays crisp."
+    ],
+    [
+      "Mushroom chaat",
+      15,
+      [
+        "mushroom",
+        "onion",
+        "tomato",
+        "lemon"
+      ],
+      "salad",
+      "Boil or steam the mushrooms, drain them well, and toss with onion, tomato, and lemon."
+    ],
+    [
+      "Banana peanut chaat",
+      10,
+      [
+        "banana",
+        "peanuts",
+        "lemon"
+      ],
+      "salad",
+      "Slice ripe banana, add roasted peanuts and lemon, and eat it straight away."
+    ],
+    [
+      "Ghugni chaat",
+      20,
+      [
+        "chickpeas",
+        "potato",
+        "onion",
+        "lemon"
+      ],
+      "salad",
+      "Warm cooked chickpeas and potato, then finish with raw onion and lemon like a street plate."
+    ],
+    [
+      "Palak poori",
+      30,
+      [
+        "atta",
+        "spinach"
+      ],
+      "paratha",
+      "Knead wilted, squeezed spinach into the dough and fry small rounds until they puff."
+    ],
+    [
+      "Methi poori",
+      30,
+      [
+        "atta",
+        "methi"
+      ],
+      "paratha",
+      "Knead fine methi into the dough. Fry until the bread puffs and the leaves no longer taste raw."
+    ],
+    [
+      "Onion poori",
+      30,
+      [
+        "atta",
+        "onion"
+      ],
+      "paratha",
+      "Knead very fine, squeezed onion into the dough and fry until the rounds puff and brown in spots."
+    ],
+    [
+      "Carrot poori",
+      30,
+      [
+        "atta",
+        "carrot"
+      ],
+      "paratha",
+      "Grate the carrot, squeeze it, and knead it into the dough. Fry until the carrot no longer looks raw at the edge."
+    ],
+    [
+      "Peas poori",
+      35,
+      [
+        "atta",
+        "peas"
+      ],
+      "paratha",
+      "Mash cooked peas dry, seal a spoonful in dough, and fry until the crust is gold and crisp."
+    ],
+    [
+      "Aloo bhature",
+      40,
+      [
+        "atta",
+        "potato",
+        "onion"
+      ],
+      "paratha",
+      "Cook potato and onion into a dry bhaji, and fry the dough until it balloons."
+    ],
+    [
+      "Besan poori",
+      25,
+      [
+        "atta",
+        "besan"
+      ],
+      "paratha",
+      "Knead besan into the atta. The poori should taste toasted, not raw flour."
+    ],
+    [
+      "Spinach poori",
+      30,
+      [
+        "atta",
+        "spinach",
+        "garlic"
+      ],
+      "paratha",
+      "Knead squeezed spinach and a little garlic into the dough, then fry until puffed."
+    ],
+    [
+      "Paneer poori",
+      35,
+      [
+        "atta",
+        "paneer",
+        "onion"
+      ],
+      "paratha",
+      "Crumble paneer with onion, seal it in dough, and fry until the crust is crisp and the filling is hot."
+    ],
+    [
+      "Cheese paratha",
+      30,
+      [
+        "atta",
+        "cheese"
+      ],
+      "paratha",
+      "Grate the cheese and seal it in the dough. Cook until the outside is spotted and the cheese has melted."
+    ],
+    [
+      "Lauki paratha",
+      35,
+      [
+        "atta",
+        "lauki"
+      ],
+      "paratha",
+      "Grate the lauki and squeeze it hard. A wet filling tears the dough."
+    ],
+    [
+      "Beans paratha",
+      35,
+      [
+        "atta",
+        "beans"
+      ],
+      "paratha",
+      "Chop the beans very fine and cook them dry before they go into the dough."
+    ],
+    [
+      "Capsicum paratha",
+      30,
+      [
+        "atta",
+        "capsicum",
+        "onion"
+      ],
+      "paratha",
+      "Cook capsicum and onion until the water is gone, then use that as a dry filling."
+    ],
+    [
+      "Corn paratha",
+      30,
+      [
+        "atta",
+        "corn"
+      ],
+      "paratha",
+      "Crush the corn so it stays in the dough. Whole kernels tear the bread when you roll it."
+    ],
+    [
+      "Mushroom paratha",
+      35,
+      [
+        "atta",
+        "mushroom",
+        "onion"
+      ],
+      "paratha",
+      "Cook the mushrooms until the pan is dry, mix with onion, and seal the filling well."
+    ],
+    [
+      "Egg paratha",
+      25,
+      [
+        "atta",
+        "egg",
+        "onion"
+      ],
+      "paratha",
+      "Cook the egg with onion until dry, then use it as a filling. Wet egg makes the dough soggy."
+    ],
+    [
+      "Chicken paratha",
+      40,
+      [
+        "atta",
+        "chicken",
+        "onion"
+      ],
+      "paratha",
+      "Cook the chicken with onion until it shreds and the pan is dry, then stuff and cook the paratha through."
+    ],
+    [
+      "Soya paratha",
+      35,
+      [
+        "atta",
+        "soya",
+        "onion"
+      ],
+      "paratha",
+      "Soak the soya, squeeze it, and cook it dry with onion before it goes into the dough."
+    ],
+    [
+      "Tofu paratha",
+      30,
+      [
+        "atta",
+        "tofu",
+        "onion"
+      ],
+      "paratha",
+      "Crumble firm tofu with cooked onion. Press the tofu first or the filling weeps."
+    ],
+    [
+      "Rajma paratha",
+      40,
+      [
+        "atta",
+        "rajma",
+        "onion"
+      ],
+      "paratha",
+      "Mash cooked rajma with onion until it holds together, then stuff and cook until the dough is done."
+    ],
+    [
+      "Chickpea paratha",
+      40,
+      [
+        "atta",
+        "chickpeas",
+        "onion"
+      ],
+      "paratha",
+      "Mash the chickpeas coarse. A smooth wet paste leaks out of the dough."
+    ],
+    [
+      "Banana paratha",
+      25,
+      [
+        "atta",
+        "banana"
+      ],
+      "paratha",
+      "Mash ripe banana into the dough and knead it smooth. Cook on a medium pan so the centre sets."
+    ],
+    [
+      "Coconut paratha",
+      30,
+      [
+        "atta",
+        "coconut"
+      ],
+      "paratha",
+      "Knead fresh coconut into the dough. Cook until the coconut smells toasted, not burnt."
+    ],
+    [
+      "Garlic paratha",
+      25,
+      [
+        "atta",
+        "garlic"
+      ],
+      "paratha",
+      "Crush the garlic and knead it into the dough with salt. Cook until the raw garlic smell is gone."
+    ],
+    [
+      "Ginger paratha",
+      25,
+      [
+        "atta",
+        "ginger"
+      ],
+      "paratha",
+      "Grate the ginger, knead it into the dough, and cook until the bread is spotted and fragrant."
+    ],
+    [
+      "Lemon paratha",
+      25,
+      [
+        "atta",
+        "lemon"
+      ],
+      "paratha",
+      "Knead lemon juice into the dough in place of some of the water. Cook until the surface is dry and spotted."
+    ],
+    [
+      "Potato onion paratha",
+      35,
+      [
+        "atta",
+        "potato",
+        "onion"
+      ],
+      "paratha",
+      "Mash potato with cooked onion and keep the filling dry, or the paratha bursts."
+    ],
+    [
+      "Cauliflower peas paratha",
+      40,
+      [
+        "atta",
+        "cauliflower",
+        "peas"
+      ],
+      "paratha",
+      "Grate the cauliflower, squeeze it, and mix with mashed peas. Both must be dry."
+    ],
+    [
+      "Cabbage paratha",
+      30,
+      [
+        "atta",
+        "cabbage"
+      ],
+      "paratha",
+      "Shred the cabbage, salt it, and squeeze hard before you knead it into the dough."
+    ],
+    [
+      "Pumpkin paratha",
+      35,
+      [
+        "atta",
+        "pumpkin"
+      ],
+      "paratha",
+      "Cook the pumpkin until dry and mash it. Wet pumpkin makes the dough slack."
+    ],
+    [
+      "Palak khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "spinach"
+      ],
+      "rice",
+      "Cook rice and lentils until soft, then fold in spinach for the last 3 minutes so it stays green."
+    ],
+    [
+      "Tomato khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "tomato"
+      ],
+      "rice",
+      "Cook the tomato down before the rice and lentils, or the khichdi tastes raw and watery."
+    ],
+    [
+      "Carrot khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "carrot"
+      ],
+      "rice",
+      "Grate the carrot so it melts into the rice and lentils instead of staying in hard pieces."
+    ],
+    [
+      "Peas khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "peas"
+      ],
+      "rice",
+      "Add the peas when the rice is almost done. Peas cooked for the full time turn grey."
+    ],
+    [
+      "Lauki khichdi",
+      35,
+      [
+        "rice",
+        "lentils",
+        "lauki"
+      ],
+      "rice",
+      "Cube the lauki small and simmer it with the rice until it turns translucent."
+    ],
+    [
+      "Pumpkin khichdi",
+      35,
+      [
+        "rice",
+        "lentils",
+        "pumpkin"
+      ],
+      "rice",
+      "Pumpkin sweetens the pot. Check at 20 minutes so it softens without becoming a puree."
+    ],
+    [
+      "Methi khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "methi"
+      ],
+      "rice",
+      "A small handful of methi is enough. Add it near the end so the khichdi is not bitter."
+    ],
+    [
+      "Corn khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "corn"
+      ],
+      "rice",
+      "Add the corn in the last 8 minutes so the kernels stay a little firm."
+    ],
+    [
+      "Mushroom khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "mushroom"
+      ],
+      "rice",
+      "Brown the mushrooms until the pan is dry, then stir them through the cooked khichdi."
+    ],
+    [
+      "Garlic khichdi",
+      30,
+      [
+        "rice",
+        "lentils",
+        "garlic"
+      ],
+      "rice",
+      "Fry the garlic until just gold and stir it through at the end. Brown garlic turns the pot bitter."
+    ],
+    [
+      "Besan dosa",
+      20,
+      [
+        "besan",
+        "onion"
+      ],
+      "breakfast",
+      "Whisk besan to a thin batter with onion and pour it like a crepe. Cook until the edges lift."
+    ],
+    [
+      "Oats dosa",
+      20,
+      [
+        "oats",
+        "onion",
+        "curd"
+      ],
+      "breakfast",
+      "Soak oats in curd until soft, mix to a pourable batter with onion, and cook thin rounds."
+    ],
+    [
+      "Carrot upma",
+      25,
+      [
+        "suji",
+        "carrot",
+        "onion"
+      ],
+      "breakfast",
+      "Cook the carrot until tender before the roasted suji goes in, or you get hard bits in soft upma."
+    ],
+    [
+      "Capsicum upma",
+      25,
+      [
+        "suji",
+        "capsicum",
+        "onion"
+      ],
+      "breakfast",
+      "Add capsicum near the end so it stays a little crisp against the soft suji."
+    ],
+    [
+      "Coconut upma",
+      20,
+      [
+        "suji",
+        "coconut",
+        "onion"
+      ],
+      "breakfast",
+      "Fold the coconut in at the end. Coconut boiled from the start turns oily."
+    ],
+    [
+      "Lemon upma",
+      20,
+      [
+        "suji",
+        "lemon",
+        "onion"
+      ],
+      "breakfast",
+      "Lemon goes in off the heat, after the suji has absorbed the water."
+    ],
+    [
+      "Poha chaat",
+      15,
+      [
+        "poha",
+        "onion",
+        "tomato",
+        "peanuts",
+        "lemon"
+      ],
+      "salad",
+      "Use thick dry poha, not the washed soft kind. Toss with onion, tomato, peanuts, and lemon."
+    ],
+    [
+      "Peanut poha",
+      15,
+      [
+        "poha",
+        "peanuts",
+        "onion"
+      ],
+      "breakfast",
+      "Roast the peanuts first, cook the onion, then fold in damp poha without mashing it."
+    ],
+    [
+      "Corn poha",
+      20,
+      [
+        "poha",
+        "corn",
+        "onion"
+      ],
+      "breakfast",
+      "Cook the corn until some kernels brown, then fold the damp poha through."
+    ],
+    [
+      "Carrot poha",
+      20,
+      [
+        "poha",
+        "carrot",
+        "onion"
+      ],
+      "breakfast",
+      "Grate the carrot and cook it with onion until soft before the poha goes in."
+    ],
+    [
+      "Tomato poha",
+      15,
+      [
+        "poha",
+        "tomato",
+        "onion"
+      ],
+      "breakfast",
+      "Cook the tomato until it is a paste, then fold in the poha. Watery tomato makes it soggy."
+    ],
+    [
+      "Beans upma",
+      25,
+      [
+        "suji",
+        "beans",
+        "onion"
+      ],
+      "breakfast",
+      "Chop the beans fine and cook them until bright and tender before adding water and suji."
+    ],
+    [
+      "Peas upma",
+      25,
+      [
+        "suji",
+        "peas",
+        "onion"
+      ],
+      "breakfast",
+      "Peas need 5 minutes in the onion before the water and suji, or they stay raw."
+    ],
+    [
+      "Methi upma",
+      25,
+      [
+        "suji",
+        "methi",
+        "onion"
+      ],
+      "breakfast",
+      "Fry the methi for a minute to take the bitterness off, then make the upma."
+    ],
+    [
+      "Spinach upma",
+      25,
+      [
+        "suji",
+        "spinach",
+        "onion"
+      ],
+      "breakfast",
+      "Wilt the spinach and cook off its water before the suji, or the upma stays wet."
+    ],
+    [
+      "Okra potato",
+      30,
+      [
+        "okra",
+        "potato",
+        "onion"
+      ],
+      "dry",
+      "Cook the potato first. Add dry okra for the last 8 minutes, uncovered, so it does not turn slimy."
+    ],
+    [
+      "Cabbage peas",
+      25,
+      [
+        "cabbage",
+        "peas",
+        "onion"
+      ],
+      "dry",
+      "Cook the cabbage uncovered until it shrinks, then add peas for 5 minutes."
+    ],
+    [
+      "Capsicum peas",
+      20,
+      [
+        "capsicum",
+        "peas",
+        "onion"
+      ],
+      "dry",
+      "Peas first, until tender, then capsicum for 4 minutes so it keeps a bite."
+    ],
+    [
+      "Spinach mushroom",
+      20,
+      [
+        "spinach",
+        "mushroom",
+        "garlic"
+      ],
+      "dry",
+      "Brown the mushrooms until dry, then wilt the spinach with garlic. Squeeze nothing; cook the water off."
+    ],
+    [
+      "Tofu peas",
+      25,
+      [
+        "tofu",
+        "peas",
+        "onion"
+      ],
+      "dry",
+      "Press and brown the tofu, cook the peas, and fold them together for 2 minutes."
+    ],
+    [
+      "Soya peas",
+      30,
+      [
+        "soya",
+        "peas",
+        "onion"
+      ],
+      "dry",
+      "Soak and squeeze the soya, brown it with onion, and add peas for the last 6 minutes."
+    ],
+    [
+      "Corn paneer",
+      25,
+      [
+        "corn",
+        "paneer",
+        "onion"
+      ],
+      "dry",
+      "Brown the paneer, then toss with corn and onion on high heat for 4 minutes. No gravy."
+    ],
+    [
+      "Lauki peas",
+      30,
+      [
+        "lauki",
+        "peas",
+        "onion"
+      ],
+      "gravy",
+      "Cook the lauki until translucent, then add peas for 6 minutes so they do not overcook."
+    ],
+    [
+      "Pumpkin peas",
+      30,
+      [
+        "pumpkin",
+        "peas",
+        "onion"
+      ],
+      "gravy",
+      "Pumpkin first, until soft, then peas. Stop before the pumpkin collapses into a puree."
+    ],
+    [
+      "Okra tomato",
+      25,
+      [
+        "okra",
+        "tomato",
+        "onion"
+      ],
+      "dry",
+      "Dry the okra and cook it uncovered until the ridges brown, then add tomato and cook the liquid off."
+    ],
+    [
+      "Methi mushroom",
+      25,
+      [
+        "methi",
+        "mushroom",
+        "garlic"
+      ],
+      "dry",
+      "Brown the mushrooms, then add methi and garlic for 4 minutes until the leaves wilt."
+    ],
+    [
+      "Lauki tomato",
+      30,
+      [
+        "lauki",
+        "tomato",
+        "onion"
+      ],
+      "gravy",
+      "Peel the lauki. It is done when a cube turns clear and a spoon goes through."
+    ],
+    [
+      "Beans capsicum",
+      20,
+      [
+        "beans",
+        "capsicum",
+        "garlic"
+      ],
+      "dry",
+      "Cook the beans until just tender, then toss capsicum and garlic through for 3 minutes."
+    ],
+    [
+      "Cauliflower carrot",
+      30,
+      [
+        "cauliflower",
+        "carrot",
+        "onion"
+      ],
+      "dry",
+      "Start the carrot, brown the cauliflower, and finish uncovered so neither one steams."
+    ],
+    [
+      "Cabbage tomato",
+      25,
+      [
+        "cabbage",
+        "tomato",
+        "onion"
+      ],
+      "dry",
+      "Cook uncovered until the cabbage shrinks and the tomato dries into it."
+    ],
+    [
+      "Eggplant tomato",
+      30,
+      [
+        "eggplant",
+        "tomato",
+        "garlic"
+      ],
+      "gravy",
+      "Salt the eggplant, pat it dry, brown it, then simmer briefly in tomato and garlic."
+    ],
+    [
+      "Mushroom tomato",
+      25,
+      [
+        "mushroom",
+        "tomato",
+        "garlic"
+      ],
+      "gravy",
+      "Brown the mushrooms until the pan is dry, then cook them in tomato for 5 minutes."
+    ],
+    [
+      "Corn tomato",
+      20,
+      [
+        "corn",
+        "tomato",
+        "onion"
+      ],
+      "dry",
+      "High heat. The corn should brown in spots and the tomato should dry, not pool."
+    ],
+    [
+      "Pumpkin tomato",
+      30,
+      [
+        "pumpkin",
+        "tomato",
+        "onion"
+      ],
+      "gravy",
+      "Cook the pumpkin until soft but still in pieces, then fold it into the tomato."
+    ],
+    [
+      "Paneer palak fry",
+      25,
+      [
+        "paneer",
+        "spinach",
+        "garlic"
+      ],
+      "dry",
+      "Wilt and squeeze the spinach, brown the paneer, and toss them with garlic. This one has no gravy."
+    ],
+    [
+      "Tofu mushroom",
+      25,
+      [
+        "tofu",
+        "mushroom",
+        "garlic"
+      ],
+      "dry",
+      "Brown the tofu and the mushrooms separately, then toss with garlic for 1 minute."
+    ],
+    [
+      "Chickpea potato dry",
+      35,
+      [
+        "chickpeas",
+        "potato",
+        "onion"
+      ],
+      "dry",
+      "Cook the potato until tender and toss it with chickpeas on high heat so the masala coats them and stays dry."
+    ],
+    [
+      "Rajma potato",
+      40,
+      [
+        "rajma",
+        "potato",
+        "onion"
+      ],
+      "gravy",
+      "The rajma must be fully cooked first. Potato goes in until a piece yields to a spoon."
+    ],
+    [
+      "Sprout tomato",
+      25,
+      [
+        "sprouts",
+        "tomato",
+        "onion"
+      ],
+      "dry",
+      "Sprouts only need 6 minutes. Cook the tomato first, then the sprouts, or they turn to mush."
+    ],
+    [
+      "Chicken potato curry",
+      40,
+      [
+        "chicken",
+        "potato",
+        "onion"
+      ],
+      "meat",
+      "Start the potato with the chicken so it drinks the masala. It is done when a piece splits with a spoon."
+    ],
+    [
+      "Chicken spinach",
+      35,
+      [
+        "chicken",
+        "spinach",
+        "onion"
+      ],
+      "meat",
+      "Cook the chicken through, then wilt the spinach at the end so it stays green."
+    ],
+    [
+      "Chicken peas",
+      35,
+      [
+        "chicken",
+        "peas",
+        "onion"
+      ],
+      "meat",
+      "Peas go in for the last 6 minutes. Longer and they wrinkle while you wait for the chicken."
+    ],
+    [
+      "Chicken capsicum",
+      30,
+      [
+        "chicken",
+        "capsicum",
+        "onion"
+      ],
+      "meat",
+      "Cook the chicken first. Capsicum goes in for the last 4 minutes so it stays a little crisp."
+    ],
+    [
+      "Chicken coconut",
+      35,
+      [
+        "chicken",
+        "coconut",
+        "onion"
+      ],
+      "meat",
+      "Simmer the chicken in onion, then stir in coconut off a hard boil so it does not turn oily."
+    ],
+    [
+      "Mutton potato curry",
+      55,
+      [
+        "mutton",
+        "potato",
+        "onion"
+      ],
+      "meat",
+      "Mutton needs the long simmer. Add potato in the last 20 minutes so it softens without disappearing."
+    ],
+    [
+      "Mutton spinach",
+      50,
+      [
+        "mutton",
+        "spinach",
+        "onion"
+      ],
+      "meat",
+      "The mutton should be tender before the spinach goes in. Spinach only needs to wilt."
+    ],
+    [
+      "Mutton peas",
+      50,
+      [
+        "mutton",
+        "peas",
+        "onion"
+      ],
+      "meat",
+      "Add peas at the end. They will not survive the full mutton simmer."
+    ],
+    [
+      "Fish spinach",
+      25,
+      [
+        "fish",
+        "spinach",
+        "onion"
+      ],
+      "meat",
+      "Wilt the spinach first, lay the fish on top, and stop when the fish flakes."
+    ],
+    [
+      "Fish capsicum",
+      25,
+      [
+        "fish",
+        "capsicum",
+        "onion"
+      ],
+      "meat",
+      "Cook the capsicum with onion, then the fish. Fish that sits too long falls apart."
+    ],
+    [
+      "Prawn capsicum",
+      20,
+      [
+        "prawns",
+        "capsicum",
+        "onion"
+      ],
+      "meat",
+      "Capsicum and onion first. Prawns only until they curl and turn pink."
+    ],
+    [
+      "Prawn peas",
+      20,
+      [
+        "prawns",
+        "peas",
+        "onion"
+      ],
+      "meat",
+      "Cook the peas, then add prawns for 4 minutes. A tight grey prawn is overcooked."
+    ],
+    [
+      "Prawn spinach",
+      20,
+      [
+        "prawns",
+        "spinach",
+        "garlic"
+      ],
+      "meat",
+      "Wilt the spinach with garlic, then fold the prawns through until they just turn pink."
+    ],
+    [
+      "Capsicum egg curry",
+      25,
+      [
+        "egg",
+        "capsicum",
+        "onion",
+        "tomato"
+      ],
+      "gravy",
+      "Boil and peel the eggs. Finish the capsicum masala, then warm the eggs in it for 4 minutes."
+    ],
+    [
+      "Chicken corn",
+      30,
+      [
+        "chicken",
+        "corn",
+        "onion"
+      ],
+      "meat",
+      "Cook the chicken through, then toss the corn in for 5 minutes so the kernels stay bright."
+    ],
+    [
+      "Mutton corn",
+      50,
+      [
+        "mutton",
+        "corn",
+        "onion"
+      ],
+      "meat",
+      "Corn goes in near the end. It should not sit through the whole mutton simmer."
+    ],
+    [
+      "Fish corn",
+      25,
+      [
+        "fish",
+        "corn",
+        "onion"
+      ],
+      "meat",
+      "Cook the corn with onion, lay the fish in, and stop when it flakes."
+    ],
+    [
+      "Prawn corn",
+      20,
+      [
+        "prawns",
+        "corn",
+        "garlic"
+      ],
+      "meat",
+      "Brown the corn a little, add garlic, then prawns only until they curl."
+    ],
+    [
+      "Chicken lauki",
+      40,
+      [
+        "chicken",
+        "lauki",
+        "onion"
+      ],
+      "meat",
+      "Cube the lauki small. It should turn clear in the same pot as the chicken."
+    ],
+    [
+      "Mutton beans",
+      50,
+      [
+        "mutton",
+        "beans",
+        "onion"
+      ],
+      "meat",
+      "Add the beans in the last 15 minutes so they are tender and still green."
+    ]
+  ];
+
+  const book = specs.concat(popular, street);
 
   // One major per recipe: the ingredient the title is about.
   // A base such as rice or atta is the major only when the title names nothing else.
-  const BASES = new Set(["rice", "atta", "bread", "poha", "suji", "besan", "oats", "vermicelli", "pasta", "noodles", "lentils"]);
+  const BASES = new Set(["rice", "atta", "bread", "poha", "suji", "besan", "oats", "vermicelli", "pasta", "noodles", "lentils", "puffedrice"]);
   const PROTEINS = new Set(["chicken", "mutton", "fish", "prawns", "egg", "paneer", "tofu", "soya"]);
   const NAME_HITS = [
     ["sweet potato", "sweetpotato"],
@@ -860,6 +2402,9 @@
     ["curd", "curd"],
     ["milk", "milk"],
     ["banana", "banana"],
+    ["puffed rice", "puffedrice"],
+    ["muri", "puffedrice"],
+    ["churumuri", "puffedrice"],
     ["tomato", "tomato"],
     ["garlic", "garlic"],
     ["ginger", "ginger"],
@@ -914,9 +2459,9 @@
       for (const id of ids) set.add(id);
     };
 
-    if (/pakora|tikki|samosa|\bvada\b|cutlet|bhajiya|chaat|bhel|dhokla|khandvi|handvo|\bdevil\b/.test(n)) add("snack");
+    if (/pakora|tikki|samosa|\bvada\b|cutlet|bhajiya|chaat|bhel|dhokla|khandvi|handvo|\bdevil\b|puchka|muri|churumuri|dabeli|kachori|bajji|bonda|golgappa/.test(n)) add("snack");
     else if (/manchurian|\b65\b|chilli paneer|chilli chicken|chilli potato|chilli mushroom|crispy corn/.test(n)) add("snack", "dinner");
-    else if (/roll|burger|pav bhaji/.test(n)) add("snack", "lunch");
+    else if (/roll|burger|pav bhaji|\bpav\b/.test(n)) add("snack", "lunch");
     else if (/halwa|kheer|ladoo|payasam/.test(n)) add("snack");
     else if (/shake|lassi|masala milk|banana curd|chaas|mishti/.test(n)) add("breakfast");
     else if (/toast|sandwich|garlic bread|bread omelette/.test(n)) add("breakfast");
@@ -988,7 +2533,7 @@
     okra: "okra", mushroom: "mushrooms?", corn: "corn", lauki: "lauki",
     pumpkin: "pumpkins?", sweetpotato: "sweetpotato", methi: "methi",
     lemon: "lemons?", ginger: "ginger", garlic: "garlic", coconut: "coconut",
-    banana: "bananas?", egg: "eggs?", chicken: "chicken", mutton: "mutton",
+    banana: "bananas?", puffedrice: "puffed rice", egg: "eggs?", chicken: "chicken", mutton: "mutton",
     fish: "fish", prawns: "prawns?", salt: "salt", oil: "oil", water: "water",
     cumin: "cumin", turmeric: "turmeric", chili: "chil+i(?:es)?"
   };
