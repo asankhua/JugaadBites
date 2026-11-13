@@ -33,7 +33,7 @@
     { id: "cabbage", label: "Cabbage", group: "kitchen" },
     { id: "cauliflower", label: "Cauliflower", group: "kitchen" },
     { id: "capsicum", label: "Capsicum", group: "kitchen" },
-    { id: "eggplant", label: "Eggplant", group: "kitchen" },
+    { id: "eggplant", label: "Brinjal", group: "kitchen" },
     { id: "okra", label: "Okra", group: "kitchen" },
     { id: "cumin", label: "Cumin", group: "kitchen" },
     { id: "mushroom", label: "Mushroom", group: "kitchen" },
@@ -475,7 +475,7 @@
     ["Sweet potato fry", 25, ["sweetpotato", "onion"], "dry", "Slice into rounds and fry until the centres are soft and the faces are browned. Cover for the first 8 minutes, then uncover to crisp."],
     ["Sweet potato mash", 20, ["sweetpotato", "milk"], "drink", "Boil the sweet potato until very soft, mash with a splash of warm milk, salt, and chili. It should be a thick mash, not a soup."],
     ["Okra garlic", 25, ["okra", "garlic"], "dry", "Dry okra, hot pan, garlic added near the end so it does not burn while the okra browns."],
-    ["Eggplant fry", 25, ["eggplant", "onion"], "dry", "Salt, rest, pat dry, then fry in a single layer. Turn once. Crowded eggplant steams."],
+    ["Brinjal fry", 25, ["eggplant", "onion"], "dry", "Salt, rest, pat dry, then fry in a single layer. Turn once. Crowded eggplant steams."],
     ["Potato peas gravy", 30, ["potato", "peas", "tomato"], "gravy", "No onion in this one. The tomato and potato make the body. Peas go in for the last 6 minutes."],
     ["Corn capsicum", 20, ["corn", "capsicum", "onion"], "dry", "High heat, 6 to 8 minutes. Corn and capsicum should keep a bite."],
     ["Cabbage carrot", 20, ["cabbage", "carrot", "onion"], "dry", "Shred both. Carrot takes 2 minutes longer, so start it first."],
@@ -2005,7 +2005,7 @@
       "Cook uncovered until the cabbage shrinks and the tomato dries into it."
     ],
     [
-      "Eggplant tomato",
+      "Brinjal tomato",
       30,
       [
         "eggplant",
@@ -3558,6 +3558,7 @@
     ["okra", "okra"],
     ["baingan", "eggplant"],
     ["eggplant", "eggplant"],
+    ["brinjal", "eggplant"],
     ["matar", "peas"],
     ["peas", "peas"],
     ["kanda", "onion"],
@@ -3734,7 +3735,7 @@
     peanuts: "peanuts?", milk: "milk", curd: "curd", butter: "butter", cheese: "cheese",
     onion: "onions?", tomato: "tomato(?:es)?", potato: "potato(?:es)?", spinach: "spinach",
     peas: "peas?", carrot: "carrots?", beans: "beans?", cabbage: "cabbage",
-    cauliflower: "cauliflower", capsicum: "capsicum", eggplant: "eggplants?|aubergine",
+    cauliflower: "cauliflower", capsicum: "capsicum", eggplant: "eggplants?|brinjals?|aubergine",
     okra: "okra", mushroom: "mushrooms?", corn: "corn", lauki: "lauki",
     pumpkin: "pumpkins?", sweetpotato: "sweetpotato", methi: "methi",
     lemon: "lemons?", ginger: "ginger", garlic: "garlic", coconut: "coconut",
