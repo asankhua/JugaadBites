@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JugaadBites — cook what you have tonight</title>
   <meta name="description" content="Tick what is already in your kitchen. 633 of the most cooked home recipes narrow to the ones you can make tonight. No sign-up, no shopping list, nothing leaves your browser." />
-  <link rel="stylesheet" href="styles.css?v=23" />
+  <link rel="stylesheet" href="styles.css?v=24" />
   <link rel="preload" as="image" href="images/hero-table.jpg" />
   <script src="recipes.js?v=14" defer></script>
   <script src="app.js?v=24" defer></script>
@@ -159,6 +159,13 @@
 
         <div class="cook-layout">
           <div class="board reveal">
+            <div class="recipe-search">
+              <label class="group-label" for="recipe-search">Search</label>
+              <div class="recipe-search-field">
+                <input id="recipe-search" class="recipe-search-input" type="text" role="combobox" aria-autocomplete="list" aria-controls="recipe-suggest" aria-expanded="false" placeholder="Dish or ingredient, such as pindi chole" autocomplete="off" enterkeyhint="search" />
+                <ul id="recipe-suggest" class="recipe-suggest" role="listbox" hidden></ul>
+              </div>
+            </div>
             <div class="board-head">
               <h2 id="board-title">In the kitchen</h2>
               <button type="button" class="clear" id="clear">Clear</button>
@@ -176,13 +183,6 @@
               <button type="button" class="diet-btn" data-meal="dinner" aria-pressed="false">Dinner</button>
             </div>
             <p class="meal-note" id="meal-note"></p>
-            <div class="recipe-search">
-              <label class="group-label" for="recipe-search">Search</label>
-              <div class="recipe-search-field">
-                <input id="recipe-search" class="recipe-search-input" type="text" role="combobox" aria-autocomplete="list" aria-controls="recipe-suggest" aria-expanded="false" placeholder="Dish or ingredient, such as pindi chole" autocomplete="off" enterkeyhint="search" />
-                <ul id="recipe-suggest" class="recipe-suggest" role="listbox" hidden></ul>
-              </div>
-            </div>
             <div id="chips"></div>
           </div>
 
